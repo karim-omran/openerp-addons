@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+        <!-- job Category Search View -->
+        <record model="ir.ui.view" id="view_job_category_search">
+        	<field name="name">job.categories.search</field>
+        	<field name="model">job.categories</field>
+        	<field name="arch" type="xml">
+        		<search string="job Categories">
+        			<field name="job_category" string="job Category"/>
+        		</search>
+        	</field>
+        </record>
+
+
+        <!-- Job Category Tree View -->
+        <record model="ir.ui.view" id="view_job_category_tree">
+            <field name="name">job.categories.tree</field>
+            <field name="model">job.categories</field>
+            <field name="field_parent"></field>
+            <field name="arch" type="xml">
+                <tree string="Category of jobs">
+                    <field name="job_category"/>
+                    <field name="upper_category"/>
+                    <field name="lower_limit"/>
+                    <field name="upper_limit"/>
+                </tree>
+            </field>
+        </record>
+
+
+    <!-- New job Form View -->
+    <record model="ir.ui.view" id="view_job_category_form">
+        <field name="name">job.categories.form</field>
+        <field name="model">job.categories</field>
+        <field name="arch" type="xml">
+            <form string="job" version="7.0">
+                <div name="job_category_info">
+                    <separator string="job Category Information"/>
+                    <group name="job_category">
+                        <group>
+                            <field name="job_category" class="oe_inline"/>
+                            <field name="lower_limit" class="oe_inline"/>
+                            <field name="upper_limit" class="oe_inline"/>
+                            <field name="upper_category" class="oe_inline"/>
+                        </group>
+                    </group>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Employee Form Extension -->
+    <record model="ir.ui.view" id="hr_jobcategory_contract_form">    
+        <field name="name">hr.jobcategory.contract.form</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/group/group[2]/field[@name='type_id']" position="after">
+                    <field name="emp_job_category"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- job Category Action -->
+    <record model="ir.actions.act_window" id="action_job_category">
+        <field name="name">Categories</field>
+        <field name="res_model">job.categories</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_job_category_search"/>
+    </record>
+
+    <menuitem name="jobs Categories" parent="hr.menu_hr_configuration" id="menu_jobs" sequence="4"/>
+
+    <menuitem name="Categories" parent="menu_jobs" id="menu_job_category" action="action_job_category" />
+
+
+
+
+
+	</data>
+</openerp>

@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+		<!-- outside work Search View -->
+		<record model="ir.ui.view" id="view_outside_work_search">
+			<field name="name">outside.work.search</field>
+			<field name="model">outside.works</field>
+			<field name="arch" type="xml">
+				<search string="outside work type">
+					<field name="type" string="outside work type"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- outside work tree view -->
+		<record model="ir.ui.view" id="view_outside_work_tree">
+			<field name="name">outside.work.tree</field>
+			<field name="model">outside.works</field>
+			<field name="arch" type="xml">
+				<tree string="Outside Work Types">
+					<field name="type"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- outside work form view -->
+		<record model="ir.ui.view" id="view_outside_work_form">
+	        <field name="name">outside.work.form</field>
+	        <field name="model">outside.works</field>
+	        <field name="arch" type="xml">
+	            <form string="Outside Work" version="7.0">
+	                <div name="outside_work_info">
+	                    <separator string="Outside Work Information"/>
+	                    <group name="outside_work">
+	                        <group>
+	                            <field name="type" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+    	</record>
+
+
+		<!-- job Category Action -->
+	    <record model="ir.actions.act_window" id="action_outside_work">
+	        <field name="name">Outside Work Type</field>
+	        <field name="res_model">outside.works</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_outside_work_search"/>
+	    </record>
+
+
+		<menuitem name="Outside Works" parent="hr.menu_hr_configuration" id="outside_works_menu" sequence="4"/>
+
+	    <menuitem name="Outside Work Types" id="menu_outside_work_types" parent="outside_works_menu" action="action_outside_work" />
+
+ 
+
+	    <!-- ================================================================================================ -->
+
+
+		<!-- outside work form Search View -->
+		<record model="ir.ui.view" id="view_outside_work_form_search">
+			<field name="name">outside.work.form.search</field>
+			<field name="model">outside.works.forms</field>
+			<field name="arch" type="xml">
+				<search string="outside work">
+					<field name="employee" string="employee"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- outside work form tree view -->
+		<record model="ir.ui.view" id="view_outside_work_form_tree">
+			<field name="name">outside.work.form.tree</field>
+			<field name="model">outside.works.forms</field>
+			<field name="arch" type="xml">
+				<tree string="Outside Work Form">
+					<field name="employee"/>
+					<field name="outside_work_type"/>
+					<field name="start_date"/>
+					<field name="end_date"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- outside work from form view -->
+		<record model="ir.ui.view" id="view_outside_work_form_form">
+	        <field name="name">outside.work.form.form</field>
+	        <field name="model">outside.works.forms</field>
+	        <field name="arch" type="xml">
+	            <form string="Outside Work Form" version="7.0">
+	                <div name="outside_work_form_info">
+	                    <separator string="Outside Work Information"/>
+	                    <group name="outside_work">
+	                        <group>
+	                            <field name="employee" class="oe_inline"/>
+	                            <field name="outside_work_type" class="oe_inline"/>
+	                            <field name="start_date" class="oe_inline"/>
+	                            <field name="end_date" class="oe_inline"/>
+	                            <field name="notes" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+	    <!-- outside work calender view -->
+
+	    <record model="ir.ui.view" id="view_outside_work_calendar">
+	    	<field name="name">outside.work.calendar</field>
+	    	<field name="model">outside.works.forms</field>
+	    	<field name="arch" type="xml">
+	    		<calendar string="Outside Work Calendar" color="employee" date_start="start_date" date_stop="end_date">
+	    			<field name="employee"/>
+	    			<field name="outside_work_type"/>
+	    		</calendar>
+	    	</field>
+	    </record>
+
+		<!-- job Category Action -->
+	    <record model="ir.actions.act_window" id="action_outside_work_form">
+	        <field name="name">Outside Work Form</field>
+	        <field name="res_model">outside.works.forms</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form,calendar</field>
+	        <field name="search_view_id" ref="view_outside_work_form_search"/>
+	    </record>
+
+	    <menuitem name="Outside Work Forms" id="menu_outside_work_form" parent="outside_works_menu" action="action_outside_work_form" />
+
+
+
+	</data>
+</openerp>

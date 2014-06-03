@@ -1,0 +1,117 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* outside_works
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-03 21:28+0000\n"
+"PO-Revision-Date: 2014-06-03 21:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: outside_works
+#: field:outside.works.forms,end_date:0
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: outside_works
+#: view:outside.works:0
+msgid "Outside Work"
+msgstr "المأمورية"
+
+#. module: outside_works
+#: model:ir.ui.menu,name:outside_works.outside_works_menu
+msgid "Outside Works"
+msgstr "المأموريات"
+
+#. module: outside_works
+#: model:ir.ui.menu,name:outside_works.menu_outside_work_types
+#: view:outside.works:0
+msgid "Outside Work Types"
+msgstr "أنواع المأموريات"
+
+#. module: outside_works
+#: field:outside.works.forms,notes:0
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: outside_works
+#: model:ir.actions.act_window,name:outside_works.action_outside_work_form
+#: view:outside.works.forms:0
+msgid "Outside Work Form"
+msgstr "المأمورية"
+
+#. module: outside_works
+#: model:ir.model,name:outside_works.model_outside_works_forms
+msgid "outside works forms model"
+msgstr "نموذج استمارة المأموريات"
+
+#. module: outside_works
+#: sql_constraint:outside.works:0
+msgid "Outside Work With The Same Type Already Exists!"
+msgstr "يوجد مسبقا مأمورية بنفس البيانات"
+
+#. module: outside_works
+#: model:ir.ui.menu,name:outside_works.menu_outside_work_form
+msgid "Outside Work Forms"
+msgstr "المأموريات"
+
+#. module: outside_works
+#: model:ir.actions.act_window,name:outside_works.action_outside_work
+#: field:outside.works,type:0
+#: field:outside.works.forms,outside_work_type:0
+msgid "Outside Work Type"
+msgstr "نوع المأمورية"
+
+#. module: outside_works
+#: model:ir.model,name:outside_works.model_outside_works
+msgid "outside works model"
+msgstr "نموذج المأموريات"
+
+#. module: outside_works
+#: view:outside.works:0
+msgid "outside work type"
+msgstr "نوع المأمورية"
+
+#. module: outside_works
+#: view:outside.works.forms:0
+msgid "employee"
+msgstr "الموظف"
+
+#. module: outside_works
+#: field:outside.works.forms,employee:0
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: outside_works
+#: view:outside.works.forms:0
+msgid "outside work"
+msgstr "المأمورية"
+
+#. module: outside_works
+#: view:outside.works:0
+#: view:outside.works.forms:0
+msgid "Outside Work Information"
+msgstr "بيانات المأمورية"
+
+#. module: outside_works
+#: constraint:outside.works.forms:0
+msgid "Error : Start Date Must Be After End Date!"
+msgstr "خطأ : تاريخ البداية يجب ان يكون بعد تاريخ الإنتهاء"
+
+#. module: outside_works
+#: field:outside.works.forms,start_date:0
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: outside_works
+#: view:outside.works.forms:0
+msgid "Outside Work Calendar"
+msgstr "تقويم المأموريات"
+

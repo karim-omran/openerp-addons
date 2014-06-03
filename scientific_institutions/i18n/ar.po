@@ -1,0 +1,138 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* scientific_institutions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-03 19:47+0000\n"
+"PO-Revision-Date: 2014-06-03 19:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: scientific_institutions
+#: sql_constraint:institution.qualification:0
+msgid "Qualification With The Same Name Already Exist!"
+msgstr "يوجد مسبقا مؤهل بنفس البيانات"
+
+#. module: scientific_institutions
+#: model:ir.ui.menu,name:scientific_institutions.menu_institutions
+msgid "Scientific Institutions"
+msgstr "المؤسسات التعلمية"
+
+#. module: scientific_institutions
+#: field:institution.department,dep_name:0
+#: model:ir.actions.act_window,name:scientific_institutions.action_institution_department
+#: field:scientific.institution,department:0
+msgid "Department"
+msgstr "القسم"
+
+#. module: scientific_institutions
+#: sql_constraint:scientific.institution:0
+msgid "Institution With The Same Data Already Exist!"
+msgstr "يوجد مسبقا مؤسسة علمية بنفس البيانات"
+
+#. module: scientific_institutions
+#: model:ir.model,name:scientific_institutions.model_scientific_institution
+msgid "scientific institution model"
+msgstr "نموذج المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: model:ir.model,name:scientific_institutions.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: scientific_institutions
+#: view:institution.department:0
+msgid "Department Information"
+msgstr "بيانات القسم"
+
+#. module: scientific_institutions
+#: view:scientific.institution:0
+msgid "Institution Information"
+msgstr "بيانات المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: view:institution.qualification:0
+msgid "Qualification Information"
+msgstr "بيانات المؤهل الدراسي"
+
+#. module: scientific_institutions
+#: field:scientific.institution,study_years:0
+msgid "Study Years"
+msgstr "سنوات الدراسة"
+
+#. module: scientific_institutions
+#: model:ir.model,name:scientific_institutions.model_institution_department
+msgid "scientific institution departments model"
+msgstr "نموذج أقسام المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: model:ir.ui.menu,name:scientific_institutions.menu_qualification_search
+msgid "Qualifications"
+msgstr "المؤهلات الدراسية"
+
+#. module: scientific_institutions
+#: view:scientific.institution:0
+msgid "institution"
+msgstr "المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: view:institution.department:0
+msgid "department"
+msgstr "القسم"
+
+#. module: scientific_institutions
+#: model:ir.actions.act_window,name:scientific_institutions.action_scientific_institution
+#: view:scientific.institution:0
+msgid "Institution"
+msgstr "المؤسسة العلمية"
+
+#. module: scientific_institutions
+#: model:ir.ui.menu,name:scientific_institutions.menu_departmennts_search
+msgid "Departments"
+msgstr "الأقسام"
+
+#. module: scientific_institutions
+#: field:institution.qualification,qual_degree:0
+#: model:ir.actions.act_window,name:scientific_institutions.action_institution_qualification
+#: field:scientific.institution,qual_degree:0
+msgid "Qualification"
+msgstr "المؤهل الدراسي"
+
+#. module: scientific_institutions
+#: model:ir.ui.menu,name:scientific_institutions.menu_institutions_search
+msgid "Institutions"
+msgstr "المؤسسات التعليمية"
+
+#. module: scientific_institutions
+#: sql_constraint:institution.department:0
+msgid "Department With The Same Name Already Exist!"
+msgstr "يوجد مسبقا قسم بنفس البيانات"
+
+#. module: scientific_institutions
+#: field:scientific.institution,inst_name:0
+msgid "Institution Name"
+msgstr "إسم المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: model:ir.model,name:scientific_institutions.model_institution_qualification
+msgid "scientific institution degrees model"
+msgstr "نموذج درجات المؤسسة العلمية"
+
+#. module: scientific_institutions
+#: view:institution.qualification:0
+msgid "qualification"
+msgstr "المؤهل الدراسي"
+
+#. module: scientific_institutions
+#: view:hr.employee:0
+#: field:hr.employee,employee_qualification:0
+msgid "Employee Qualification"
+msgstr "المؤهل الدراسي للموظف"
+

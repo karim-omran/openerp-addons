@@ -1,0 +1,89 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* job_categories
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 22:58+0000\n"
+"PO-Revision-Date: 2014-05-29 22:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: job_categories
+#: field:job.categories,upper_limit:0
+msgid "Upper Salary Limit"
+msgstr "الحد الأعلي للمرتب"
+
+#. module: job_categories
+#: model:ir.ui.menu,name:job_categories.menu_jobs
+msgid "jobs"
+msgstr "الوظائف"
+
+#. module: job_categories
+#: view:job.categories:0
+msgid "job Category Information"
+msgstr "بيانات الوظيفة"
+
+#. module: job_categories
+#: constraint:job.categories:0
+msgid "Error : Lower And Upper Limit Must Be Positive!"
+msgstr "خطا : الحد الأدني و الأعلي للأجر يجب ان يكون رقم اكبر من الصفر"
+
+#. module: job_categories
+#: model:ir.model,name:job_categories.model_job_categories
+#: view:job.categories:0
+msgid "job Category"
+msgstr "نوع الوظيفة"
+
+#. module: job_categories
+#: view:job.categories:0
+msgid "Category of jobs"
+msgstr "نوع الوظائف"
+
+#. module: job_categories
+#: view:job.categories:0
+msgid "job"
+msgstr "وظيفة"
+
+#. module: job_categories
+#: field:job.categories,job_category:0
+msgid "Category Name"
+msgstr "إسم الفئة الوظيفة"
+
+#. module: job_categories
+#: sql_constraint:job.categories:0
+msgid "Job Category With The Same Name Already Exist!"
+msgstr "يوجد مسبقا وظيفة بنفس البيانات"
+
+#. module: job_categories
+#: field:job.categories,upper_category:0
+msgid "Upper Category"
+msgstr "الدرجة الوظيفية الأعلي"
+
+#. module: job_categories
+#: model:ir.ui.menu,name:job_categories.isfp_config_menu
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: job_categories
+#: field:job.categories,lower_limit:0
+msgid "Lower Salary Limit"
+msgstr "الحد الأدني للأجر"
+
+#. module: job_categories
+#: view:job.categories:0
+msgid "job Categories"
+msgstr "الفئات الوظيفية"
+
+#. module: job_categories
+#: model:ir.actions.act_window,name:job_categories.action_job_category
+#: model:ir.ui.menu,name:job_categories.menu_job_category
+msgid "Categories"
+msgstr "تصنيفات الوظائف"
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="insurance_search" model="ir.ui.view">
+            <field name="name">hr.insurance.search</field>
+            <field name="model">hr.insurance</field>
+            <field name="arch" type="xml">
+               <search string="insurance">
+                    <field name="company_name"/>
+                </search>
+            </field>
+        </record>
+
+            <!-- Job Category Tree View -->
+        <record model="ir.ui.view" id="view_insurance_tree">
+            <field name="name">hr.insurance.tree</field>
+            <field name="model">hr.insurance</field>
+           <!--  <field name="field_parent"></field> -->
+            <field name="arch" type="xml">
+                <tree string="companies for insurance">
+                    <field name="company_name"/>
+                    <field name="employee_share"/>
+                    <field name="owner_share"/>
+                    <field name="injury_share"/>
+                    <field name="aging_share"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_insurance_form">
+            <field name="name">hr.insurance.form</field>
+            <field name="model">hr.insurance</field>
+            <field name="arch" type="xml">
+                <form string="insurance" version="7.0">
+                    <div name="insurance_data">
+                        <separator string="insurance"/>
+                        <group name="insurance">
+                            <group>
+                                <field name="company_name" class="oe_inline"/>
+                                <field name="employee_share" class="oe_inline"/>
+                                <field name="owner_share" class="oe_inline"/>
+                                <field name="injury_share" class="oe_inline"/>
+                                <field name="aging_share" class="oe_inline"/>
+                            </group>
+                        </group>
+                    </div>
+                </form>
+            </field>
+        </record>
+ 
+       <record id="hr_insurance_contract" model="ir.ui.view">
+            <field name="name">hr.insurance_contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                 <notebook>
+                        <page string="Insurance Companies" name="Insurance Companies">
+                                <group name="company_name" string="Insurance Company">
+                                    <field name="company_name_insurance"/>
+                                </group>
+                        </page>
+                </notebook>
+            </field>
+
+        </record> 
+
+       
+        <record model="ir.actions.act_window" id="action_insurance_category">
+            <field name="name">insurance subscribed companies</field>
+            <field name="res_model">hr.insurance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="insurance_search"/>
+        </record>
+
+
+        <menuitem name="Insurance" parent="hr.menu_hr_configuration" id="menu_ins" sequence="4"/>
+
+        <menuitem name="Insurance Companies" parent="menu_ins" id="insurance_companies_menu"  action="action_insurance_category" />
+
+
+    </data>
+</openerp>

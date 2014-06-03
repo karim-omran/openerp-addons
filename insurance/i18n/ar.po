@@ -1,0 +1,94 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* insurance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-03 22:49+0000\n"
+"PO-Revision-Date: 2014-06-03 22:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: insurance
+#: model:ir.actions.act_window,name:insurance.action_insurance_category
+msgid "insurance subscribed companies"
+msgstr "شركات التأمين"
+
+#. module: insurance
+#: field:hr.insurance,owner_share:0
+msgid "Owner Share"
+msgstr "حصة صاحب العمل"
+
+#. module: insurance
+#: field:hr.insurance,injury_share:0
+msgid "Injury Share"
+msgstr "حصة الإصابة"
+
+#. module: insurance
+#: sql_constraint:hr.insurance:0
+msgid "insurance company name With The Same Name Already Exist!"
+msgstr "يوجد مسبقا شركة تأمين بنفس البيانات"
+
+#. module: insurance
+#: view:hr.contract:0
+msgid "Insurance Company"
+msgstr "شركة التأمين"
+
+#. module: insurance
+#: view:hr.insurance:0
+msgid "companies for insurance"
+msgstr "شركات التأمين"
+
+#. module: insurance
+#: model:ir.model,name:insurance.model_hr_contract
+msgid "Contract"
+msgstr "العقد"
+
+#. module: insurance
+#: view:hr.insurance:0
+msgid "insurance"
+msgstr "التأمين"
+
+#. module: insurance
+#: model:ir.model,name:insurance.model_hr_insurance
+msgid "hr.insurance"
+msgstr ""
+
+#. module: insurance
+#: field:hr.insurance,aging_share:0
+msgid "Aging Share"
+msgstr "حصة الشيخوخة"
+
+#. module: insurance
+#: field:hr.insurance,employee_share:0
+msgid "Employee Share"
+msgstr "حصة الموظف"
+
+#. module: insurance
+#: view:hr.contract:0
+#: model:ir.ui.menu,name:insurance.insurance_companies_menu
+msgid "Insurance Companies"
+msgstr "شركات التأمين"
+
+#. module: insurance
+#: constraint:hr.insurance:0
+msgid "Error : Shares Must Be Positive Number And Less Than 100!"
+msgstr "خطأ : النسبة يجب أن تكون رقم أكبر من صفر و أصغر من ١٠٠"
+
+#. module: insurance
+#: model:ir.ui.menu,name:insurance.menu_ins
+msgid "Insurance"
+msgstr "التأمين"
+
+#. module: insurance
+#: field:hr.contract,company_name_insurance:0
+#: field:hr.insurance,company_name:0
+msgid "Company Name"
+msgstr "إسم الشركة"
+

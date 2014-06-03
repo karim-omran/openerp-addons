@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+        <!-- Scientific Institution Search View -->
+        <record model="ir.ui.view" id="view_scientific_institution_search">
+        	<field name="name">scientific.institution.search</field>
+        	<field name="model">scientific.institution</field>
+        	<field name="arch" type="xml">
+        		<search string="institution">
+        			<field name="inst_name" string="institution"/>
+        		</search>
+        	</field>
+        </record>
+
+
+        <!-- Scientific Institution Tree View -->
+        <record model="ir.ui.view" id="view_scientific_institution_tree">
+            <field name="name">scientific.institution.tree</field>
+            <field name="model">scientific.institution</field>
+            <field name="field_parent"></field>
+            <field name="arch" type="xml">
+                <tree string="Institution">
+                	<field name="inst_name"/>
+                	<field name="study_years"/>
+                	<field name="department"/>
+                	<field name="qual_degree"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- New Scientific Institution Form View -->
+	    <record model="ir.ui.view" id="view_scientific_institution_form">
+	        <field name="name">scientific.institution.form</field>
+	        <field name="model">scientific.institution</field>
+	        <field name="arch" type="xml">
+	            <form string="institution" version="7.0">
+	                <div name="institution_info">
+	                    <separator string="Institution Information"/>
+	                    <group name="institution">
+	                        <group>
+	                            <field name="inst_name" class="oe_inline"/>
+	                            <field name="study_years" class="oe_inline"/>
+	                            <field name="department" class="oe_inline"/>
+	                            <field name="qual_degree" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+	   	<!-- Scientific Institution Search Action -->
+	    <record model="ir.actions.act_window" id="action_scientific_institution">
+	        <field name="name">Institution</field>
+	        <field name="res_model">scientific.institution</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_scientific_institution_search"/>
+	    </record>
+
+	    <menuitem name="Scientific Institutions" parent="hr.menu_hr_configuration" id="menu_institutions" sequence="4"/>
+
+	    <menuitem name="Institutions" parent="menu_institutions" id="menu_institutions_search" action="action_scientific_institution"/>
+
+	<!-- ============================================================================= -->
+
+
+        <!-- Institution Department Search View -->
+        <record model="ir.ui.view" id="view_institution_department_search">
+        	<field name="name">institution.department.search</field>
+        	<field name="model">institution.department</field>
+        	<field name="arch" type="xml">
+        		<search string="department">
+        			<field name="dep_name" string="department"/>
+        		</search>
+        	</field>
+        </record>
+
+        <!-- Institution Department Tree View -->
+        <record model="ir.ui.view" id="view_institution_department_tree">
+            <field name="name">institution.department.tree</field>
+            <field name="model">institution.department</field>
+            <field name="field_parent"></field>
+            <field name="arch" type="xml">
+                <tree string="department">
+                    <field name="dep_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- New Institution Department Form View -->
+	    <record model="ir.ui.view" id="view_institution_department_form">
+	        <field name="name">institution.department.form</field>
+	        <field name="model">institution.department</field>
+	        <field name="arch" type="xml">
+	            <form string="department" version="7.0">
+	                <div name="department_info">
+	                    <separator string="Department Information"/>
+	                    <group name="department">
+	                        <group>
+	                            <field name="dep_name" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+	    <!-- Institution Department Search Action -->
+	    <record model="ir.actions.act_window" id="action_institution_department">
+	        <field name="name">Department</field>
+	        <field name="res_model">institution.department</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_institution_department_search"/>
+	    </record>
+
+
+	    <menuitem name="Departments" parent="menu_institutions" id="menu_departmennts_search" action="action_institution_department" />
+
+	<!-- ================================================================================= -->
+
+        <!-- Institution Qualification Search View -->
+        <record model="ir.ui.view" id="view_institution_qualification_search">
+        	<field name="name">institution.qualification.search</field>
+        	<field name="model">institution.qualification</field>
+        	<field name="arch" type="xml">
+        		<search string="qualification">
+        			<field name="qual_degree" string="qualification"/>
+        		</search>
+        	</field>
+        </record>
+
+        
+        <!-- Institution Qualification Tree View -->
+        <record model="ir.ui.view" id="view_institution_qualification_tree">
+            <field name="name">institution.qualification.tree</field>
+            <field name="model">institution.qualification</field>
+            <field name="field_parent"></field>
+            <field name="arch" type="xml">
+                <tree string="qualification">
+                    <field name="qual_degree"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Institution Qualification Form View -->
+	    <record model="ir.ui.view" id="view_institution_qualification_form">
+	        <field name="name">institution.qualification.form</field>
+	        <field name="model">institution.qualification</field>
+	        <field name="arch" type="xml">
+	            <form string="qualification" version="7.0">
+	                <div name="qualification_info">
+	                    <separator string="Qualification Information"/>
+	                    <group name="qualification">
+	                        <group>
+	                            <field name="qual_degree" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+		<!-- Employee Form Extension -->
+	    <record model="ir.ui.view" id="hr_jobcategory_employee_form_ext">    
+	        <field name="name">hr.jobcategory.employee.form.ext</field>
+	        <field name="model">hr.employee</field>
+	        <field name="inherit_id" ref="hr.view_employee_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Contact Information']" position="after">
+	                <group string="Employee Qualification">
+	                    <field name="employee_qualification"/>
+	                </group>
+	            </xpath>
+	        </field>
+	    </record>
+
+	     <!-- Institution Qualification Search Action -->
+	    <record model="ir.actions.act_window" id="action_institution_qualification">
+	        <field name="name">Qualification</field>
+	        <field name="res_model">institution.qualification</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_institution_qualification_search"/>
+	    </record>
+
+
+	    <menuitem name="Qualifications" parent="menu_institutions" id="menu_qualification_search" action="action_institution_qualification" />
+
+
+
+	</data>
+</openerp>
