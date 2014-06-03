@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+		<record id="action_country" model="ir.actions.act_window">
+            <field name="name">Countries</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.country</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem name="Nationalities" parent="hr.menu_hr_configuration" id="menu_countries" action="action_country" />
+
+
+
+	</data>
+</openerp>
