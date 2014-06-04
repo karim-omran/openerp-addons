@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>		
+		
+		<!-- disability Search View -->
+		<record model="ir.ui.view" id="view_disability_search">
+			<field name="name">disability.search</field>
+			<field name="model">emp.disabilities</field>
+			<field name="arch" type="xml">
+				<search string="disability type">
+					<field name="disability_type" string="disability type"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- disability Tree View -->
+		<record model="ir.ui.view" id="view_disability_tree">
+			<field name="name">disability.tree</field>
+			<field name="model">emp.disabilities</field>
+			<field name="arch" type="xml">
+				<search string="disability type">
+					<field name="disability_type"/>
+					<field name="notes"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- disability form view -->
+		<record model="ir.ui.view" id="view_disability_form">
+	        <field name="name">disability.form</field>
+	        <field name="model">emp.disabilities</field>
+	        <field name="arch" type="xml">
+	            <form string="Disabilities" version="7.0">
+	                <div name="disability_info">
+	                    <separator string="Disability Information"/>
+	                    <group name="disability">
+	                        <group>
+	                            <field name="disability_type" class="oe_inline"/>
+	                            <field name="notes" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+    	</record>
+
+
+    	<!-- Extend Employee Form To Add Disability Type -->
+		<record model='ir.ui.view' id='view_employee_form_inherit'>
+			<field name='name'>hr.employee.form</field>
+			<field name='model'>hr.employee</field>
+			<field name='type'>form</field>
+			<field name='inherit_id' ref='hr.view_employee_form'/>                                           
+			<field name='arch' type='xml'>
+				<notebook>
+					<page string="Career Disabilities" name="information">
+						<group>
+							<field name="disability_type"/>
+						</group>
+					</page>
+				</notebook>
+			</field>
+		</record>
+
+
+    	<!-- Disabilities Action -->
+	    <record model="ir.actions.act_window" id="action_disablities">
+	        <field name="name">Disability Type</field>
+	        <field name="res_model">emp.disabilities</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_disability_search"/>
+	    </record>
+
+
+	    <menuitem name="Disabilities" id="menu_disabilities_types" parent="hr.menu_hr_configuration" action="action_disablities" />
+
+
+
+</data>
+</openerp>
+
+
