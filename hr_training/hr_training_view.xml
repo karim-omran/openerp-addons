@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_hr_training_course_form" model="ir.ui.view">
+
+			<field name="name">view.hr.training.course.form</field>
+			<field name="model">hr.training.course</field>
+			<field name="arch" type="xml">
+				<form string="Register New Training Course" version="7.0">
+					
+					<group col="2">
+						<field name="name"/>
+						<field name="category"/>
+						<field name="from_date"/>
+						<field name="to_date"/>
+						<field name="attachments">
+							<tree>
+								<field name="name"/>
+							</tree>
+							<form col="2">	
+								<field name="name"/>
+								<field name="datas"/>
+							</form>
+						</field>
+						<field name="notes"/>
+					</group>
+				
+				</form>
+			</field>
+
+		</record>
+
+
+		<record id="view_hr_training_course_tree" model="ir.ui.view">
+		
+
+			<field name="name">view.hr.training.course.tree</field>
+			<field name="model">hr.training.course</field>
+			<field name="arch" type="xml">
+				<tree string="Training Courses">
+					<field name="name"/>
+					<field name="category"/>
+					<field name="from_date"/>
+					<field name="to_date"/>
+				</tree>
+			</field>
+
+		</record>
+
+		<record model="ir.ui.view" id="hr_training_course_search">
+			<field name="name">hr.training.course.search</field>
+			<field name="model">hr.training.course</field>
+			<field name="arch" type="xml">
+
+				<search string="Training Courses">
+					<field name="from_date" string="Start date" filter_domain="[('from_date','&gt;=',self)]"/>
+					<field name="to_date" string="End date" filter_domain="[('to_date','&lt;=',self)]"/>
+				</search>
+			</field>
+		</record>	
+					
+
+
+
+
+		<record model="ir.actions.act_window" id="action_hr_training_course">
+			<field name="name">Training</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.training.course</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_hr_training_course_tree"/>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click Here To Register A New Course...
+				</p>
+			</field>
+		</record>
+
+
+		<record id="view_hr_training_register_form" model="ir.ui.view">
+
+			<field name="name">view.hr.training.register.form</field>
+			<field name="model">hr.training.register</field>
+			<field name="arch" type="xml">
+				<form string="Register Employees" version="7.0">
+					
+					<group col="2">
+						<field name="employee"/>
+						<field name="course" domain="[('from_date','>=',time.strftime('%%Y-%%m-%%d'))]"/>
+					</group>
+				
+				</form>
+			</field>
+
+		</record>
+
+
+		<record id="view_hr_training_register_tree" model="ir.ui.view">
+			
+
+				<field name="name">view.hr.training.register.tree</field>
+				<field name="model">hr.training.register</field>
+				<field name="arch" type="xml">
+					<tree string="Employees Registered">
+						<field name="employee"/>
+						<field name="course"/>
+					</tree>
+				</field>
+
+			</record>			
+
+
+
+		<record model="ir.actions.act_window" id="action_hr_training_register">
+			<field name="name">Register</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.training.register</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_hr_training_register_tree"/>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click Here To Register an Employee To a Training Course
+				</p>
+			</field>
+		</record>
+
+		<record id="hr_training_employee_extd_form" model="ir.ui.view">
+			
+			<field name="name">hr.training.employee.extd.form</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form"/>
+			<field name="arch" type="xml">
+			<xpath expr="//group[@name= 'active_group']" position="before">
+				<group string="Training">
+					<field name="training_id" nolabel="1">
+						<form string="Training">
+							<field name="course"/>
+						</form>
+						<tree>
+							<field name="course"/>
+						</tree>
+					</field>
+				</group>
+			</xpath>
+			</field>
+
+		</record>
+
+
+
+
+		<menuitem name="Training" id="training_menu_main" parent="hr.menu_hr_root"/>
+			<menuitem name="Add Course" id="training_course" parent="training_menu_main" action="action_hr_training_course"/>
+			<menuitem name="Register Employee" id="training_register" parent="training_menu_main" action="action_hr_training_register"/>
+	
+
+	</data>
+</openerp>	

@@ -1,0 +1,187 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* hr_training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-04 13:08+0000\n"
+"PO-Revision-Date: 2014-06-04 13:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_training
+#: field:hr.training.course,category:0
+msgid "Category"
+msgstr "التصنيف"
+
+#. module: hr_training
+#: field:hr.training.course,from_date:0
+msgid "From"
+msgstr "من"
+
+#. module: hr_training
+#: view:hr.training.register:0
+msgid "Register Employees"
+msgstr "تسجيل موظفين"
+
+#. module: hr_training
+#: report:addons/hr_training/report/hr_training_report.mako:47
+msgid "Work Phone"
+msgstr "هاتف العمل"
+
+#. module: hr_training
+#: view:hr.training.course:0
+msgid "Register New Training Course"
+msgstr "تسجيل دورة تدريبية جديد"
+
+#. module: hr_training
+#: report:addons/hr_training/report/hr_training_report.mako:47
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_training
+#: constraint:hr.training.course:0
+msgid "Incorrect Date Values"
+msgstr "التواريخ المدخلة غير صحيحة"
+
+#. module: hr_training
+#: field:hr.training.register,employee:0
+#: model:ir.model,name:hr_training.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_training
+#: view:hr.training.course:0
+msgid "Start date"
+msgstr "يبدا من"
+
+#. module: hr_training
+#: report:addons/hr_training/report/hr_training_report.mako:47
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: hr_training
+#: model:ir.actions.act_window,help:hr_training.action_hr_training_course
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"					Click Here To Register A New Course...\n"
+"				</p>\n"
+"			"
+msgstr "اضغط هن لتسجيل دورة تدريبية جديد"
+
+#. module: hr_training
+#: sql_constraint:hr.training.register:0
+msgid "Employee Already assigned to Course"
+msgstr "الموظف مسجل بهذا البرنامج مسبقا"
+
+#. module: hr_training
+#: model:ir.ui.menu,name:hr_training.training_course
+msgid "Add Course"
+msgstr "اضف دورة تدريبية"
+
+#. module: hr_training
+#: constraint:hr.training.course:0
+msgid "Course name and dates must be unique"
+msgstr "اسم البرنامج و تواريخة لابد ان تكون مميزة"
+
+#. module: hr_training
+#: model:ir.ui.menu,name:hr_training.training_register
+msgid "Register Employee"
+msgstr "تسجيل موظفين"
+
+#. module: hr_training
+#: field:hr.training.course,name:0
+msgid "Course name"
+msgstr "اسم البرنامج التدريبى"
+
+#. module: hr_training
+#: view:hr.employee:0
+#: field:hr.employee,training_id:0
+#: model:ir.actions.act_window,name:hr_training.action_hr_training_course
+#: model:ir.ui.menu,name:hr_training.training_menu_main
+msgid "Training"
+msgstr "تدريب"
+
+#. module: hr_training
+#: view:hr.training.course:0
+msgid "Training Courses"
+msgstr "برامج تدريبية"
+
+#. module: hr_training
+#: view:hr.training.register:0
+msgid "Employees Registered"
+msgstr "المظفين المسجلين"
+
+#. module: hr_training
+#: model:ir.actions.act_window,help:hr_training.action_hr_training_register
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"					Click Here To Register an Employee To a Training Course\n"
+"				</p>\n"
+"			"
+msgstr "اضغط هنا لتسجيل موظف بدورة تدريبية"
+
+#. module: hr_training
+#: field:hr.training.course,notes:0
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: hr_training
+#: model:ir.actions.act_window,name:hr_training.action_hr_training_register
+msgid "Register"
+msgstr "تسجيل"
+
+#. module: hr_training
+#: model:ir.model,name:hr_training.model_hr_training_register
+msgid "Register Employees for Training Courses"
+msgstr "تسجيل موظفين ببرامج تدريبية"
+
+#. module: hr_training
+#: sql_constraint:hr.training.course:0
+msgid "The same course with the same start and end dates exists"
+msgstr "يوجد دورة تدريبية بنفس الاسم و التواريخ مسجل بقاعدة البيانات"
+
+#. module: hr_training
+#: view:hr.training.course:0
+msgid "Attachements"
+msgstr "ملحقات"
+
+#. module: hr_training
+#: view:hr.training.course:0
+msgid "End date"
+msgstr "ينتهى"
+
+#. module: hr_training
+#: field:hr.training.course,attachments:0
+msgid "Attachments"
+msgstr "ملحقات"
+
+#. module: hr_training
+#: field:hr.training.course,to_date:0
+msgid "To"
+msgstr "الى"
+
+#. module: hr_training
+#: model:ir.model,name:hr_training.model_hr_training_course
+msgid "Register Training Course"
+msgstr "تسجيل دورة تدريبية"
+
+#. module: hr_training
+#: field:hr.training.register,course:0
+msgid "Course"
+msgstr " دورة تدريبية"
+
+#. module: hr_training
+#: help:hr.employee,training_id:0
+msgid "These are the training courses the employee had."
+msgstr "البرامج التدريبية التى تم تسجيل الموظف بها"
+
+#. module: hr_training
+#: model:ir.actions.report.xml,name:hr_training.hr_training_report
+msgid "Registered Repo"
+msgstr "تقرير المسجلين"
+
