@@ -93,6 +93,18 @@ table {
 		string="Registered Repo"
 		report_type="webkit"
 		webkit_header="hr_training"/>
+
+	<report id="hr_trainig_wizard_course"
+		name="course.search"
+		string="course Search"
+		model="hr.training.course"
+		auto="False"
+		multi="True"
+		menu="False"
+		file="hr_training/report/course_search.mako"
+		report_type="webkit"
+		webkit_header="hr_training"/>
+
 	</data>
 </openerp>
 

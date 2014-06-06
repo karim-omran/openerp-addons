@@ -48,8 +48,8 @@
 
 		</record>
 
-		<record model="ir.ui.view" id="hr_training_course_search">
-			<field name="name">hr.training.course.search</field>
+		<record model="ir.ui.view" id="hr_training_search">
+			<field name="name">hr.training.search</field>
 			<field name="model">hr.training.course</field>
 			<field name="arch" type="xml">
 

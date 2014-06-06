@@ -1,1 +1,1 @@
-import hr_training, report
+import hr_training, report, wizard

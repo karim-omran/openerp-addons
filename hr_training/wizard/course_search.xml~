@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_course_search" model="ir.ui.view">
+            <field name="name">Course By date</field>
+            <field name="model">course.search</field>
+            <field name="arch" type="xml">
+                <form string="Course date range" version="7.0">
+                    <group col="4" string="Dates">
+                        <field name="range_start"/>
+                        <field name="range_end"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" type="object" string="Print Report" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+     <record id="action_report_course_search" model="ir.actions.act_window">
+            <field name="name">Course by date</field>
+            <field name="res_model">course.search</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+	
+
+
+
+    </data>
+</openerp>

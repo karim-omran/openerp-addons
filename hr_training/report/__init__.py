@@ -1,1 +1,1 @@
-import hr_training_report
+import hr_training_report , course_search

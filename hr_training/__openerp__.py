@@ -15,7 +15,8 @@ courses and keeps track of both.
 	'data': [
 		
 		'hr_training_view.xml',
-		'hr_training_report.xml'
+		'hr_training_report.xml',
+		'wizard/course_search.xml',
 
 	],
 	'installable': True,
