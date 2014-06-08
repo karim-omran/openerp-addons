@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="service_time_leaves_form" model="ir.ui.view">
+			<field name="name">service.time.leaves.form</field>
+			<field name="model">leaves.service.time</field>
+			<field name="arch" type="xml">
+				<form string="Service time Leave structure" version="7.0">
+	
+				<group col="2">
+					<field name="from"/>
+					<field name="to"/>
+					<field name="allocation"/>
+				</group>				
+
+
+				</form>
+
+			</field>
+		</record>
+
+
+			<record id="service_time_leaves_tree" model="ir.ui.view">
+			<field name="name">service.time.leaves.tree</field>
+			<field name="model">leaves.service.time</field>
+			<field name="arch" type="xml">
+				<tree string="Service Time Leave Structure">
+	
+					<field name="from"/>
+					<field name="to"/>
+					<field name="allocation"/>
+
+
+				</tree>
+
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_service_time_leaves">
+			
+			<field name="name">Service Time</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">leaves.service.time</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="service_time_leaves_tree"/>
+			<field name="help" type="html">
+
+				<p class="oe_view_nocontent_create">
+					Click here to add Service Time Rule
+				</p>
+
+			</field>
+
+
+		</record>
+
+		
+
+
+		<record id="form_hr_holidays_status_extd" model="ir.ui.view">
+
+			<field name="name">hr.holidays.status.form</field>
+			<field name="model">hr.holidays.status</field>
+			<field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+			<field name="arch" type="xml">
+			<field name="name" position="after">
+					
+					<field name="allocation_type"/>
+		
+				<field name="default_allocation" attrs="{'invisible':[('allocation_type','!=','normal')],'required':[('allocation_type','=','normal')]}"/>
+		
+			</field>
+			<xpath expr="//group[@name='selection']/field[@name='limit']" position="after">
+			<field name="transfer_allocation"/>
+			</xpath>
+			</field>
+		</record>
+
+		<record id="tree_hr_holidays_status_extd" model="ir.ui.view">
+
+			<field name="name">hr.holidays.status.tree</field>
+			<field name="model">hr.holidays.status</field>
+			<field name="inherit_id" ref="hr_holidays.view_holiday_status_tree"/>
+			<field name="arch" type="xml">
+			<field name="name" position="after">
+				<field name="default_allocation"/>
+			</field>
+			</field>
+
+		</record>
+
+
+		
+		<record id="normal_tree_hr_holidays_status_extd" model="ir.ui.view">
+
+			<field name="name">hr.holidays.status.normal.tree</field>
+			<field name="model">hr.holidays.status</field>
+			<field name="inherit_id" ref="hr_holidays.view_holiday_status_normal_tree"/>
+			<field name="arch" type="xml">
+			<field name="name" position="after">
+				<field name="default_allocation"/>
+			</field>
+			</field>
+
+		</record>
+
+
+
+		<record model="ir.ui.view" id="view_motherhood_leaves_search">
+        	<field name="name">motherhood.leaves.search</field>
+        	<field name="model">motherhood.leaves</field>
+        	<field name="arch" type="xml">
+        		<search string="motherhood leaves">
+        			<field name="child_order" string="Child Order"/>
+        		</search>
+        	</field>
+        </record>
+
+
+        <!-- Motherhood Leaves Tree View -->
+        <record model="ir.ui.view" id="view_motherhood_leaves_tree">
+            <field name="name">motherhood.leaves.tree</field>
+            <field name="model">motherhood.leaves</field>
+            <field name="arch" type="xml">
+                <tree string="motherhood leaves">
+                	<field name="child_order"/>
+                	<field name="leave_balance"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- New Motherhood Leaves Form View -->
+	    <record model="ir.ui.view" id="view_motherhood_leaves_form">
+	        <field name="name">motherhood.leaves.form</field>
+	        <field name="model">motherhood.leaves</field>
+	        <field name="arch" type="xml">
+	            <form string="motherhood leave" version="7.0">
+	                <div name="mother">
+	                    <separator string="Motherhood Leave Information"/>
+	                    <group name="Motherhood Leave">
+	                        <group>
+	                            <field name="child_order" class="oe_inline"/>
+	                            <field name="leave_balance" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+	    <!-- Motherhood Leaves Search Action -->
+	    <record model="ir.actions.act_window" id="action_motherhood_leaves">
+	        <field name="name">Motherhood Leaves</field>
+	        <field name="res_model">motherhood.leaves</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_motherhood_leaves_search"/>
+	    </record>
+
+	    <menuitem name="Leaves Rules" parent="hr.menu_hr_configuration" id="menu_leaves_rules_leaves" sequence="4"/>
+
+	    <menuitem name="Motherhood Leaves" parent="menu_leaves_rules_leaves" id="menu_motherhood_leaves_search" action="action_motherhood_leaves"/>
+
+
+<!-- ================================================================================= -->
+
+		<!-- Pilgrimage Leaves Search View -->
+        <record model="ir.ui.view" id="view_pilgrimage_leaves_search">
+        	<field name="name">pilgrimage.leaves.search</field>
+        	<field name="model">pilgrimage.leaves</field>
+        	<field name="arch" type="xml">
+        		<search string="pilgrimage leaves">
+        			<field name="religion" string="Religion"/>
+        		</search>
+        	</field>
+        </record>
+
+
+        <!-- Pilgrimage Leaves Tree View -->
+        <record model="ir.ui.view" id="view_pilgrimage_leaves_tree">
+            <field name="name">pilgrimage.leaves.tree</field>
+            <field name="model">pilgrimage.leaves</field>
+            <field name="arch" type="xml">
+                <tree string="pilgrimage leaves">
+                	<field name="religion"/>
+                	<field name="leave_balance"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- New Pilgrimage Leaves Form View -->
+	    <record model="ir.ui.view" id="view_pilgrimage_leaves_form">
+	        <field name="name">pilgrimage.leaves.form</field>
+	        <field name="model">pilgrimage.leaves</field>
+	        <field name="arch" type="xml">
+	            <form string="pilgrimage leave" version="7.0">
+	                <div name="mother">
+	                    <separator string="Pilgrimage Leave Information"/>
+	                    <group name="pilgrimage leave">
+	                        <group>
+	                            <field name="religion" class="oe_inline"/>
+	                            <field name="leave_balance" class="oe_inline"/>
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+
+	    <!-- Pilgrimage Leaves Search Action -->
+	    <record model="ir.actions.act_window" id="action_pilgrimage_leaves">
+	        <field name="name">Pilgrimage Leaves</field>
+	        <field name="res_model">pilgrimage.leaves</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_pilgrimage_leaves_search"/>
+	    </record>
+
+		
+		<menuitem name="Leave rules" id="leave_rules_main" parent="hr_holidays.menu_open_ask_holidays"/>
+
+		<menuitem name="Service Years" id="leaves_rules_service_years" action="action_service_time_leaves" parent="leave_rules_main"/>
+
+		<menuitem name="Motherhood Leaves" parent="leave_rules_main" id="menu_motherhood_leaves_search" action="action_motherhood_leaves"/>
+
+	        <menuitem name="Pilgrimage Leaves" parent="leave_rules_main" id="menu_pilgrimage_leaves_search" action="action_pilgrimage_leaves"/>
+
+
+	</data>
+</openerp>
