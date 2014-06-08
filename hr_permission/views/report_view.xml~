@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report id="permission_report"
+                name="employee.permission.report"
+                auto="False"
+                model="hr.permission"
+                file="hr_permission/report/employee_permission_report.mako"
+                string="Sci_Inst_Byname"
+                report_type="webkit"
+                menu="False"/>
+                
+	</data>
+
+</openerp>

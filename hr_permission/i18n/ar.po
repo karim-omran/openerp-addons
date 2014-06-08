@@ -1,0 +1,225 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* hr_permission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-08 20:46+0000\n"
+"PO-Revision-Date: 2014-06-08 20:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_permission
+#: view:permission.per.month:0
+msgid "Employess Permissions"
+msgstr "أذونات الموظفين"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "In Progress"
+msgstr "In Progress"
+
+#. module: hr_permission
+#: view:permission.per.month:0
+msgid "Print Employess Permissions in a Certain Month"
+msgstr "طباعه أذونات الموظفين خلال شهر معين"
+
+#. module: hr_permission
+#: view:permission.per.month:0
+msgid "Print"
+msgstr "طباعه"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "employee permission"
+msgstr "إذن موظف"
+
+#. module: hr_permission
+#: field:hr.permission,type_of_permission:0
+msgid "Type of permission"
+msgstr "نوع ألأذن"
+
+#. module: hr_permission
+#: model:ir.model,name:hr_permission.model_hr_employee
+msgid "Employee"
+msgstr "موظف"
+
+#. module: hr_permission
+#: view:hr.permission:0
+#: selection:hr.permission,state:0
+msgid "New"
+msgstr "جديد"
+
+#. module: hr_permission
+#: selection:hr.permission,state:0
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:35
+msgid "Employee Name"
+msgstr "أسم الموظف"
+
+#. module: hr_permission
+#: field:hr.permission,state:0
+msgid "Status"
+msgstr "الحاله"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Accepted Ideas"
+msgstr "أفكار مقبوله"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Permission"
+msgstr "إذن"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "New Ideas"
+msgstr "أفكار جديدة"
+
+#. module: hr_permission
+#: model:ir.ui.menu,name:hr_permission.side_menu
+msgid "Employee permissions"
+msgstr "أذونات الموظف"
+
+#. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:36
+msgid "Reason"
+msgstr "السبب"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "human resource"
+msgstr "الموارد البشريه"
+
+#. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:37
+#: field:hr.permission,date_of_permission:0
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_permission
+#: model:ir.ui.menu,name:hr_permission.isfp_config_menu
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:38
+#: field:hr.permission,available_permission:0
+#: model:ir.ui.menu,name:hr_permission.menu_ins
+#: model:ir.ui.menu,name:hr_permission.permission_menu
+msgid "Permissions"
+msgstr "أذونات"
+
+#. module: hr_permission
+#: model:ir.model,name:hr_permission.model_hr_permission
+msgid "Ask for a permission"
+msgstr "طلب أذن"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_permission
+#: model:ir.actions.report.xml,name:hr_permission.permission_report
+msgid "Permissions In Certain Month"
+msgstr "الأذونات خلال شهر معين"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "permission"
+msgstr "إذن"
+
+#. module: hr_permission
+#: constraint:hr.permission:0
+msgid "Error : Date must be today or after that"
+msgstr "خطـأ:التاريخ يجب ان يكون اليوم أو فى يوم بعد  ذلك"
+
+#. module: hr_permission
+#: field:hr.employee,available_perm:0
+msgid "Available permissions"
+msgstr "رصيد الأذونات "
+
+#. module: hr_permission
+#: model:ir.actions.act_window,name:hr_permission.action_permission_category
+msgid "ask for a permission"
+msgstr "طلب أذن"
+
+#. module: hr_permission
+#: code:addons/hr_permission/hr_permission.py:75
+#, python-format
+msgid "Employee has no available permissions "
+msgstr " الموظف ليس لديه رصيد من الاذونات"
+
+#. module: hr_permission
+#: view:hr.permission:0
+#: selection:hr.permission,state:0
+msgid "Accepted"
+msgstr "مقبول"
+
+#. module: hr_permission
+#: model:ir.actions.act_window,name:hr_permission.action_permission_per_month
+msgid "Employess Permissions In a Certain Month"
+msgstr "أذونات الموظف خلال شهر معين"
+
+#. module: hr_permission
+#: field:hr.permission,employee_name:0
+msgid "Employee name"
+msgstr " أسم الموظف"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Accept"
+msgstr "موافق"
+
+#. module: hr_permission
+#: field:permission.per.month,month:0
+msgid "Month"
+msgstr "الشهر"
+
+#. module: hr_permission
+#: code:addons/hr_permission/hr_permission.py:75
+#, python-format
+msgid "Warning"
+msgstr "تحزير"
+
+#. module: hr_permission
+#: selection:hr.permission,state:0
+msgid "Done"
+msgstr "تم"
+
+#. module: hr_permission
+#: field:permission.per.month,year:0
+msgid "Year"
+msgstr "السنه"
+
+#. module: hr_permission
+#: view:permission.per.month:0
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Open Ideas"
+msgstr "افكار المطروحه"
+
+#. module: hr_permission
+#: view:hr.permission:0
+msgid "Open"
+msgstr "فتح"
+
+#. module: hr_permission
+#: view:permission.per.month:0
+msgid "or"
+msgstr "أو"
+

@@ -1,0 +1,30 @@
+import time
+from openerp.osv import osv, fields
+
+class permission_per_month(osv.osv_memory):
+	_name = 'permission.per.month'
+	_description = 'Print Employee Permission Report'
+
+	_columns = {
+			'month' : fields.char('Month',required=True,),
+			'year' : fields.char('Year',required=True,),
+		}
+
+
+
+	def print_report(self, cr, uid, ids, data, context=None):
+		record = self.pool.get('permission.per.month').read(cr,uid,ids,['month','year'],context=context)[0]
+
+		datas = {
+				'form': record
+			}
+		
+
+		
+		return {
+				'type': 'ir.actions.report.xml',
+				'report_name': 'employee.permission.report',
+				'datas': datas,
+				}
+
+permission_per_month()

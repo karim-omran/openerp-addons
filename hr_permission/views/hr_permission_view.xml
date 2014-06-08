@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<menuitem name="Permissions" id="permission_menu"/>
+
+        <record id="permission_search" model="ir.ui.view">
+            <field name="name">hr.permission</field>
+            <field name="model">hr.permission</field>
+            <field name="arch" type="xml">
+               <search string="permission">
+                    <field name="employee_name" string="human resource"/>
+				            <filter icon="terp-document-new" string="New" domain="[('state','=', 'draft')]" help="New Ideas"/>
+				            <filter icon="terp-camera_test" string="In Progress" domain="[('state','=', 'open')]" help="Open Ideas"/>
+				            <filter icon="terp-check" string="Accepted" domain="[('state','=','close')]" help="Accepted Ideas" />
+                </search>
+            </field>
+        </record>
+
+
+		   <record model="ir.ui.view" id="view_hrpermission_hrpermission_form">
+        <field name="name">hr.permission.form</field>
+        <field name="model">hr.permission</field>
+        <field name="arch" type="xml">
+            <form string="Permission" version="7.0">
+                <header>
+                  	<field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                    <button name="permission_open" string="Open" states="draft" class="oe_highlight"/>
+                    <button name="permission_close" string="Accept" states="open" class="oe_highlight"/>
+                    <button name="permission_cancel" string="Refuse" states="open"  class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <label for="employee_name" class="oe_edit_only"/>
+                    <h1><field name="employee_name" on_change="onchange_select_permission(employee_name)"/></h1>
+                    <label for="type_of_permission" class="oe_edit_only"/>
+                    <field name="type_of_permission"/>
+                    <label for="date_of_permission"/><newline/>
+                    <field name="date_of_permission"/>
+		<label for="available_permission"/><newline/>
+                    <field name="available_permission"/>
+		
+									
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+     </record>
+
+            <!-- permission Category Tree View--> 
+        <record model="ir.ui.view" id="view_attendance_tree">
+            <field name="name">hr.permission.tree</field>
+            <field name="model">hr.permission</field>
+          
+            <field name="arch" type="xml">
+                <tree string="employee permission" colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'">
+                    <field name="employee_name" />
+                    <field name="type_of_permission"/>
+                    <field name="date_of_permission"/>
+                    <field name="available_permission"/>
+										<field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_permission_category">
+            <field name="name">ask for a permission</field>
+            <field name="res_model">hr.permission</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="permission_search"/>
+        </record>
+
+
+        <menuitem name="Configuration" parent="permission_menu" id="isfp_config_menu" sequence="30" />
+
+        <menuitem name="Permissions" parent="isfp_config_menu" id="menu_ins" sequence="4"/>
+
+        <menuitem name="Employee permissions" parent="menu_ins" id="side_menus" action="action_permission_category" /> 
+		
+    </data>
+</openerp>
