@@ -18,6 +18,11 @@
 		float:right;
 
 	}
+	table,th,td
+	{
+		border:1px solid black;
+		border-collapse:collapse
+	}
 	.var{
 		
 		display:inline-block;
@@ -29,16 +34,23 @@
 </head>
 <body>
 	<% setLang(context["lang"]) %>
-
 	<% recs = _get_permissions_of_month(data['form']) %>
   %for record in recs:
-		${_('Employee Name')} : ${record.employee_name.name}<br/>
-		${_('Reason')} : ${record.type_of_permission.type_of_permission}<br/>
-		${_('Date')} : ${record.date_of_permission}<br/>
-		${_('Permissions')} : ${record.available_permission}<br/>
-		
+	</br>	
+	<table>
+		<tr>${_("Gender :")}
+			<th>${_(Employee Name)}</th>
+			<th>${_(Reason)}</th>
+			<th>${_(Date)}</th>
+			<th>${_(Permissions)}</th>
+		</tr>
+		<tr>
+			<td>${record.employee_name.name}</td>
+			<td>${record.type_of_permission.type_of_permission}</td>
+			<td>${record.date_of_permission}</td>
+			<td>${record.available_permission}/2</td>
+		</tr>
+	</table>
 	%endfor
-
 </body>
-
 </html>

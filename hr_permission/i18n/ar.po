@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-08 20:46+0000\n"
-"PO-Revision-Date: 2014-06-08 20:46+0000\n"
+"POT-Creation-Date: 2014-06-09 17:30+0000\n"
+"PO-Revision-Date: 2014-06-09 17:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,11 @@ msgstr "إذن موظف"
 
 #. module: hr_permission
 #: field:hr.permission,type_of_permission:0
+#: view:hr.typeofpermission:0
+#: field:hr.typeofpermission,type_of_permission:0
+#: model:ir.actions.act_window,name:hr_permission.action_type_of_permission_category
+#: model:ir.model,name:hr_permission.model_hr_typeofpermission
+#: model:ir.ui.menu,name:hr_permission.side
 msgid "Type of permission"
 msgstr "نوع ألأذن"
 
@@ -57,14 +62,14 @@ msgid "New"
 msgstr "جديد"
 
 #. module: hr_permission
+#: model:ir.model,name:hr_permission.model_permission_per_month
+msgid "Print Employee Permission Report"
+msgstr "Print Employee Permission Report"
+
+#. module: hr_permission
 #: selection:hr.permission,state:0
 msgid "Refused"
 msgstr "مرفوض"
-
-#. module: hr_permission
-#: report:addons/hr_permission/report/employee_permission_report.mako:35
-msgid "Employee Name"
-msgstr "أسم الموظف"
 
 #. module: hr_permission
 #: field:hr.permission,state:0
@@ -87,14 +92,9 @@ msgid "New Ideas"
 msgstr "أفكار جديدة"
 
 #. module: hr_permission
-#: model:ir.ui.menu,name:hr_permission.side_menu
+#: model:ir.ui.menu,name:hr_permission.side_menus
 msgid "Employee permissions"
 msgstr "أذونات الموظف"
-
-#. module: hr_permission
-#: report:addons/hr_permission/report/employee_permission_report.mako:36
-msgid "Reason"
-msgstr "السبب"
 
 #. module: hr_permission
 #: view:hr.permission:0
@@ -102,21 +102,24 @@ msgid "human resource"
 msgstr "الموارد البشريه"
 
 #. module: hr_permission
-#: report:addons/hr_permission/report/employee_permission_report.mako:37
+#: view:hr.typeofpermission:0
+msgid "type of permission"
+msgstr "نوع الأذن"
+
+#. module: hr_permission
 #: field:hr.permission,date_of_permission:0
 msgid "Date"
 msgstr "التاريخ"
 
 #. module: hr_permission
-#: model:ir.ui.menu,name:hr_permission.isfp_config_menu
-msgid "Configuration"
-msgstr "إعدادات"
+#: view:hr.permission:0
+#: selection:hr.permission,state:0
+msgid "Accepted"
+msgstr "مقبول"
 
 #. module: hr_permission
-#: report:addons/hr_permission/report/employee_permission_report.mako:38
 #: field:hr.permission,available_permission:0
 #: model:ir.ui.menu,name:hr_permission.menu_ins
-#: model:ir.ui.menu,name:hr_permission.permission_menu
 msgid "Permissions"
 msgstr "أذونات"
 
@@ -160,12 +163,6 @@ msgstr "طلب أذن"
 #, python-format
 msgid "Employee has no available permissions "
 msgstr " الموظف ليس لديه رصيد من الاذونات"
-
-#. module: hr_permission
-#: view:hr.permission:0
-#: selection:hr.permission,state:0
-msgid "Accepted"
-msgstr "مقبول"
 
 #. module: hr_permission
 #: model:ir.actions.act_window,name:hr_permission.action_permission_per_month

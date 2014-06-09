@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-    	<menuitem name="Permissions" id="permission_menu"/>
+    
 
         <record id="permission_search" model="ir.ui.view">
-            <field name="name">hr.permission</field>
+            <field name="name">hr.permission.search</field>
             <field name="model">hr.permission</field>
             <field name="arch" type="xml">
                <search string="permission">
@@ -15,7 +15,7 @@
                 </search>
             </field>
         </record>
-
+				<!-- permissions form-->
 
 		   <record model="ir.ui.view" id="view_hrpermission_hrpermission_form">
         <field name="name">hr.permission.form</field>
@@ -35,7 +35,7 @@
                     <field name="type_of_permission"/>
                     <label for="date_of_permission"/><newline/>
                     <field name="date_of_permission"/>
-		<label for="available_permission"/><newline/>
+										<label for="available_permission"/><newline/>
                     <field name="available_permission"/>
 		
 									
@@ -61,8 +61,7 @@
             </field>
         </record>
 
-
-
+				<!--search action-->
         <record model="ir.actions.act_window" id="action_permission_category">
             <field name="name">ask for a permission</field>
             <field name="res_model">hr.permission</field>
@@ -72,11 +71,49 @@
         </record>
 
 
-        <menuitem name="Configuration" parent="permission_menu" id="isfp_config_menu" sequence="30" />
+        <menuitem name="Permissions" parent="hr.menu_hr_configuration" id="menu_ins" sequence="4"/>
+				<menuitem name="Employee permissions" parent="menu_ins" id="side_menus" action="action_permission_category" /> 
+<!--=====================================================================================================-->
+       <!--type of permission search view -->
+				<record id="type_of_permission_search" model="ir.ui.view">
+            <field name="name">hr.typeofpermission.search</field>
+            <field name="model">hr.typeofpermission</field>
+            <field name="arch" type="xml">
+               <search string="type of permission">
+                    <field name="type_of_permission" string="Type of permission"/>
+                </search>
+            </field>
+        </record>
+       <!--type of permission form view -->
+        
+		   <record model="ir.ui.view" id="view_typeofpermission_permission_form">
+        <field name="name">hr.typeofpermission.form</field>
+        <field name="model">hr.typeofpermission</field>
+        <field name="arch" type="xml">
+					<field name= "type_of_permission"></field>
+        </field>
+       </record>
+     
+            <!-- type of permission  Tree View--> 
+        <record model="ir.ui.view" id="view_permission_tree">
+            <field name="name">hr.typeofpermission.tree</field>
+            <field name="model">hr.typeofpermission</field>
+          
+            <field name="arch" type="xml">
+                <tree string="Type of permission">
+                    <field name="type_of_permission" />
+                </tree>
+            </field>
+        </record>
+         <!--search action-->
+        <record model="ir.actions.act_window" id="action_type_of_permission_category">
+            <field name="name">Type of permission</field>
+            <field name="res_model">hr.typeofpermission</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="type_of_permission_search"/>
+        </record>
+		<menuitem name="Type of permission" parent="menu_ins" id="side" action="action_type_of_permission_category" /> 
 
-        <menuitem name="Permissions" parent="isfp_config_menu" id="menu_ins" sequence="4"/>
-
-        <menuitem name="Employee permissions" parent="menu_ins" id="side_menus" action="action_permission_category" /> 
-		
     </data>
 </openerp>

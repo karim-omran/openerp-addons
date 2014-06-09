@@ -1,5 +1,6 @@
 from openerp.report import report_sxw
 from datetime import datetime
+import calendar
 
 class employee_permission_report(report_sxw.rml_parse):
 	def __init__(self, cr, uid, name, context):
@@ -13,13 +14,16 @@ class employee_permission_report(report_sxw.rml_parse):
 	def _get_permissions_of_month(self, form, context=None):
 		year=form['year']
 		month=form['month']
-		date_from =datetime.strptime((str(month)+'-'+str(01)+'-'+str(year)),"%m-%d-%Y")
-		
-		date_to = datetime.strptime((str(month)+'-'+str(30)+'-'+str(year)),"%m-%d-%Y")
+
+		last_day = calendar.monthrange(int(year), int(month))[1]
+
+		date_from =datetime.strptime((str(month)+'-'+str(01)+'-'+str(year)),"%m-%d-%Y")		
+		date_to = datetime.strptime((str(month)+'-'+str(last_day)+'-'+str(year)),"%m-%d-%Y")
 
    
 		ids_ = self.pool.get('hr.permission').search(self.cr, self.uid, [('date_of_permission', '>=',date_from),('date_of_permission','<=',date_to)]) # browse(self.cr, self.uid, [form[0],],context=context)
 		recs = self.pool.get('hr.permission').browse(self.cr, self.uid,ids_, context=context)
 		return recs
+
 report_sxw.report_sxw('report.employee.permission.report','hr.permission','addons/hr_permission/report/employee_permission_report.mako',parser=employee_permission_report)
 

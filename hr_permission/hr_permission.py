@@ -40,7 +40,7 @@ class hr_permission(osv.osv):
 	def _check_date(self, cr, uid, ids, context=None):
 		now = datetime.date.today().strftime("%Y-%m-%d")
 		record = self.browse(cr, uid, ids, context=context)
-		if record[0].date_of_permission <= now:
+		if record[0].date_of_permission < now:
 			return False 
 		else:
 			return True
@@ -90,6 +90,16 @@ class hr_permission(osv.osv):
 			for id_ in ids_ :
 				self.pool.get("hr.employee").write(cr,uid ,id_ ,{"available_perm":2},context=None)		
 			return
+class hr_typeofpermission(osv.osv):
+	_name = 'hr.typeofpermission'
+	_rec_name = 'type_of_permission'
+	_description = 'Type of permission'
+	_columns = {
+			'type_of_permission' : fields.char('Type of permission', size=50, required=True,),
+		}
+	_sql_constrains = [
+			('type_of_permission', 'unique(type_of_permission)', 'Type of permission Must Be Unique'),
+		]
 
 
 

@@ -5,11 +5,15 @@ class permission_per_month(osv.osv_memory):
 	_name = 'permission.per.month'
 	_description = 'Print Employee Permission Report'
 
+
+	def _get_selection(self, cursor, user_id, context=None):
+		return (('01','01'), ('02', '02'), ('03','03'), ('04','04'), ('05','05'), ('06','06'), ('07','07'), ('08','08'), ('09','09'), ('10','10'), ('11','11'), ('12','12'))
+
+
 	_columns = {
-			'month' : fields.char('Month',required=True,),
+			'month' : fields.selection( _get_selection, 'Month', reqiured=True),
 			'year' : fields.char('Year',required=True,),
 		}
-
 
 
 	def print_report(self, cr, uid, ids, data, context=None):
@@ -18,9 +22,7 @@ class permission_per_month(osv.osv_memory):
 		datas = {
 				'form': record
 			}
-		
-
-		
+			
 		return {
 				'type': 'ir.actions.report.xml',
 				'report_name': 'employee.permission.report',
