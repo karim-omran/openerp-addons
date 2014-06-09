@@ -10,7 +10,7 @@ This module is an extension of the Leaves module.
 Allows for group allocation of leaves to employees with pre-defined leave types set with default allocation of days.
 			""",
 	'author': 'ITI Dev Team',
-	'depends': ['hr','hr_holidays'],
+	'depends': ['base','hr','hr_holidays'],
 	'data': [
 
 		'hr_holidays_extd_view.xml',

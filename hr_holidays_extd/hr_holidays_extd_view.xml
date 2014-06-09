@@ -8,9 +8,9 @@
 			<field name="arch" type="xml">
 				<form string="Service time Leave structure" version="7.0">
 	
-				<group col="2">
-					<field name="from"/>
-					<field name="to"/>
+				<group col="2" name="Years of Service">
+					<field name="from_"/>
+					<field name="to_"/>
 					<field name="allocation"/>
 				</group>				
 
@@ -27,8 +27,8 @@
 			<field name="arch" type="xml">
 				<tree string="Service Time Leave Structure">
 	
-					<field name="from"/>
-					<field name="to"/>
+					<field name="from_"/>
+					<field name="to_"/>
 					<field name="allocation"/>
 
 
@@ -56,7 +56,21 @@
 
 		</record>
 
+		<record id="extend_hr_employee" model="ir.ui.view">
+			
+			<field name="name">hr.employee.form</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form"/>
+			<field name="arch" type="xml">
+			<xpath expr="//notebook/page[@string='Personal Information']/group/group[@string='Status']/field[@name='marital']" position="after">
+
+				<field name="religion"/>
 		
+			</xpath>
+			</field>
+
+		</record>	
+	
 
 
 		<record id="form_hr_holidays_status_extd" model="ir.ui.view">
@@ -69,7 +83,7 @@
 					
 					<field name="allocation_type"/>
 		
-				<field name="default_allocation" attrs="{'invisible':[('allocation_type','!=','normal')],'required':[('allocation_type','=','normal')]}"/>
+				<field name="default_allocation" attrs="{'invisible':[('allocation_type','!=','1')],'required':[('allocation_type','=','1')]}"/>
 		
 			</field>
 			<xpath expr="//group[@name='selection']/field[@name='limit']" position="after">
@@ -105,7 +119,25 @@
 			</field>
 
 		</record>
+		
 
+		<record id="override_field_allocation" model="ir.ui.view">
+			
+			<field name="name">Allocation Request</field>
+			<field name="model">hr.holidays</field>
+			<field name="inherit_id" ref="hr_holidays.allocation_leave_new"/>
+			<field name="arch" type="xml">
+				<field name="holiday_status_id" position="attributes">
+				<attribute name="on_change">get_Current_allocation_scheme(employee_id,holiday_status_id)</attribute>
+				<attribute name="default">0</attribute>
+				</field>
+				
+				<field name="employee_id" position="attributes">
+				<attribute name="on_change">get_Current_allocation_scheme(employee_id,holiday_status_id)</attribute>
+				</field>
+			</field>
+
+		</record>
 
 
 		<record model="ir.ui.view" id="view_motherhood_leaves_search">
