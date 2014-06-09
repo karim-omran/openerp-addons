@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data> 
+        <record id="hr_custom_infraction_form" model="ir.ui.view">
+            <field name="name">hr.infraction.category.form</field>
+            <field name="model">hr.infraction.category</field>
+            <field name="inherit_id" ref="hr_infraction.hr_infraction_category_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="/form/sheet/field[@name='code']" position="after">
+                <group>
+                    <field name="infraction_number"/>
+                    <field name="penalty_days"/>
+                    <field name="discount"/>
+                </group>
+            </xpath>
+            </field>
+        </record>
+        <record id="hr_custom_infraction_tree" model="ir.ui.view">
+            <field name="name">hr.infraction.category.tree</field>
+            <field name="model">hr.infraction.category</field>
+            <field name="inherit_id" ref="hr_infraction.hr_infraction_category_tree"/>
+            <field name="arch" type="xml">
+            <xpath expr="/tree/field[@name='code']" position="after">
+                    <field name="infraction_number"/>
+                    <field name="penalty_days"/>
+                    <field name="discount"/>
+            </xpath>
+            </field>
+        </record>
+        <record id="hr_custom_action_form" model="ir.ui.view">
+            <field name="name">hr.infraction.action.wizard.form</field>
+            <field name="model">hr.infraction.action.wizard</field>
+            <field name="inherit_id" ref="hr_infraction.hr_infraction_action_wizard_form"/>
+            <field name="arch" type="xml">
+
+            <xpath expr="/form/group/group/field[@name='action_type']" position="replace">
+                    <field name="action_type" on_change="take_action(context)"/>
+            </xpath>
+            <xpath expr="/form/group[2]" position="after">
+                    <group string="Discount Days" attrs="{'invisible': [('action_type','!=','discount_days')]}">
+                        <group>
+                            <field name="penalty_days_value"/>
+                        </group>
+                        <group></group>
+                    </group>
+            </xpath>
+            </field>
+        </record>
+
+        <record id="hr_infraction_discount_days_tree" model="ir.ui.view">
+            <field name="name">hr.infraction.discount.tree</field>
+            <field name="model">hr.infraction.action.discount</field>
+            <field name="arch" type="xml">
+                <tree string="discount days">
+                    <field name="employee"/>
+                    <field name="infraction"/>
+                    <field name="penalty_value"/>
+                    <field name="actual_penalty"/>
+                    <field name="confirmed"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+       <record id="hr_infraction_discount_days_form" model="ir.ui.view">
+            <field name="name">hr.infraction.discount.form</field>
+            <field name="model">hr.infraction.action.discount</field>
+            <field name="arch" type="xml">
+                <form string="discount days" version="7.0">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="employee"/>
+                            <field name="infraction"/>
+                        </group>
+                        <group>
+                            <field name="penalty_value"/>
+                            <field name="actual_penalty"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="confirmed"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_infraction_discount_days_action" model="ir.actions.act_window">
+            <field name="name">discount.days</field>
+            <field name="res_model">hr.infraction.action.discount</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field  name="view_id" ref="hr_infraction_discount_days_tree"></field>
+        </record> 
+        <menuitem id="menu_hr_infraction_discount_action" action="hr_infraction_discount_days_action" name="discount Days" parent="hr_infraction.menu_hr_infraction_root" sequence="4"/>
+  </data>
+</openerp>

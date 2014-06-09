@@ -1,0 +1,142 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* hr_custom_infraction
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-08 13:57+0000\n"
+"PO-Revision-Date: 2014-06-08 13:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,penalty_value:0
+msgid "penalty value"
+msgstr "قيمة الخصم"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.category,discount:0
+msgid "Basic"
+msgstr "الأساسى"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.action.discount,state:0
+msgid "Exempt"
+msgstr "معفى"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,employee:0
+msgid "Employee"
+msgstr "موظف"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.action.discount,state:0
+msgid "Decreased"
+msgstr "مخفضة"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,confirmed:0
+msgid "confirmed"
+msgstr "تأكيد الموافقة"
+
+#. module: hr_custom_infraction
+#: model:ir.model,name:hr_custom_infraction.model_hr_infraction_action_wizard
+msgid "Choice of Actions for Infraction"
+msgstr " إختار إجراء المناسب"
+
+#. module: hr_custom_infraction
+#: model:ir.ui.menu,name:hr_custom_infraction.menu_hr_infraction_discount_action
+msgid "discount Days"
+msgstr "الأيام المخصومة"
+
+#. module: hr_custom_infraction
+#: view:hr.infraction.action.discount:0
+msgid "discount days"
+msgstr "الأيام المخصومة"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.action.discount,state:0
+msgid "Totaly paied"
+msgstr "مدفوعة كاملة"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.category,discount:0
+msgid "Discount from"
+msgstr "الخصم من"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,state:0
+msgid "state"
+msgstr "الحالة"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.action.discount,state:0
+msgid "Installment"
+msgstr "مُقسط"
+
+#. module: hr_custom_infraction
+#: view:hr.infraction.action.wizard:0
+msgid "Discount Days"
+msgstr "الأيام المخصومة"
+
+#. module: hr_custom_infraction
+#: model:ir.model,name:hr_custom_infraction.model_hr_infraction_category
+msgid "Infraction Type"
+msgstr "نوع المخالفة"
+
+#. module: hr_custom_infraction
+#: model:ir.model,name:hr_custom_infraction.model_hr_infraction_action_discount
+msgid "hr.infraction.action.discount"
+msgstr ""
+
+#. module: hr_custom_infraction
+#: model:ir.actions.act_window,name:hr_custom_infraction.hr_infraction_discount_days_action
+msgid "discount.days"
+msgstr ""
+
+#. module: hr_custom_infraction
+#: model:ir.model,name:hr_custom_infraction.model_hr_infraction_action
+msgid "Action Based on Infraction"
+msgstr "إجراء المخالفة"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.wizard,penalty_days_value:0
+msgid "penalty days value"
+msgstr "قيمة الأيام المخصومة"
+
+#. module: hr_custom_infraction
+#: selection:hr.infraction.category,discount:0
+msgid "Total"
+msgstr "الإجمالى"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,infraction:0
+msgid "Infraction"
+msgstr "مخالفة"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.action.discount,actual_penalty:0
+msgid "actual penalty"
+msgstr "الخصم الفعلى"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.category,infraction_number:0
+msgid "infraction number"
+msgstr "عدد المخالفات"
+
+#. module: hr_custom_infraction
+#: field:hr.infraction.category,penalty_days:0
+msgid "penalty days"
+msgstr "الأيام المخصومة"
+
+#. module: hr_infraction
+#: selection:hr.infraction.action,type:0
+#: selection:hr.infraction.action.wizard,action_type:0
+msgid "Discount days"
+msgstr "خصم أيام"
