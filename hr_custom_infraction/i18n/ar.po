@@ -98,7 +98,7 @@ msgstr ""
 #. module: hr_custom_infraction
 #: model:ir.actions.act_window,name:hr_custom_infraction.hr_infraction_discount_days_action
 msgid "discount.days"
-msgstr ""
+msgstr "الأيام المخصومة"
 
 #. module: hr_custom_infraction
 #: model:ir.model,name:hr_custom_infraction.model_hr_infraction_action

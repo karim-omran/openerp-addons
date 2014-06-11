@@ -2,7 +2,8 @@ from openerp.osv import fields, osv
 from openerp import netsvc
 from hr_infraction.hr_infraction import hr_infraction
 import logging
-
+from datetime import datetime
+import calendar
 _logger = logging.getLogger(__name__)
 
 class hr_infraction_category(osv.Model):
@@ -48,17 +49,14 @@ class hr_action(osv.TransientModel):
         infraction_category_ids= self.pool.get("hr.infraction.category").search(cr,uid,[("id","=",cat_id)], context=context)
         penalty_days = self.pool.get("hr.infraction.category").browse(cr, uid, infraction_category_ids, context=context)[0].penalty_days
         discountFrom = self.pool.get("hr.infraction.category").browse(cr, uid, infraction_category_ids, context=context)[0].discount
+        res = {}
         if discountFrom == "Basic":
             contract_obj= self.pool.get("hr.contract")
             contract_data=contract_obj.search(cr,uid,[('employee_id','=',id_)])
             emp_wage = contract_obj.browse(cr,uid,contract_data,context)
             daily_wage = emp_wage[0].wage/30
-        if discountFrom == "Total":
-            emp_wage=5000
-            daily_wage=emp_wage/30
-        days_value=daily_wage*penalty_days
-        res = {}
-        res['penalty_days_value'] = days_value
+            days_value=daily_wage*penalty_days
+            res['penalty_days_value'] = days_value
         return {'value':res}
 
 
@@ -70,7 +68,6 @@ class hr_action(osv.TransientModel):
         if not infraction_id:
             return False
         data = self.read(cr, uid, ids[0], context=context)
-
         vals = {
             'infraction_id': infraction_id,
             'type': data['action_type'],
@@ -209,14 +206,190 @@ hr_action()
 
 class hr_infraction_action_discount(osv.Model):
     
-    _name = 'hr.infraction.action.discount'
-    _columns = {
-        'employee':fields.many2one('hr.employee','Employee', readonly=True),
-        'infraction':fields.many2one('hr.infraction','Infraction', readonly=True),
-        'penalty_value':fields.float('penalty value', readonly=True),
-        'actual_penalty':fields.float('actual penalty'),
-        'confirmed':fields.boolean('confirmed'),
-        'state':fields.selection([('totaly_paied','Totaly paied'),('decreased','Decreased'),('exempt','Exempt'),('installment','Installment')],'state',translated=True)
-    }
+	_name = 'hr.infraction.action.discount'
+	
+	def _get_Days(self, cr, uid, ids, name, arg, context=None):
+
+		if context is None:
+			context = {}
+
+		return {ids[0]:self.browse(cr, uid, ids, context=context)[0].infraction.category_id.penalty_days}
+
+	_columns = {
+        	'employee':fields.many2one('hr.employee','Employee', readonly=True),
+		'infraction':fields.many2one('hr.infraction','Infraction', readonly=True),
+		'penalty_value':fields.float('penalty value',readonly=True),
+		'actual_penalty':fields.float('actual penalty'),
+		'confirmed':fields.boolean('confirmed'),
+		'state':fields.selection([('totaly_paied','Totaly paied'),('decreased','Decreased'),('exempt','Exempt'),('installment','Installment')],'state',translated=True),
+		'days': fields.function(_get_Days,string="days",type='float',store=True)
+    	}
 hr_infraction_action_discount()
+
+class infraction_overflow(osv.osv):
+
+	_name = "infraction.overflow"
+	_description = "Keep record of overflow infractions from each month"
+	_columns = {
+
+		'employee_id': fields.integer('Employee'),
+		'infraction_id': fields.integer('Infraction'),
+
+	}
+
+
+
+class hr_employee(osv.osv):
+
+	_name = "hr.employee"
+	_inherit = "hr.employee"
+	_description = "Add infraction deduction fields"
+	
+	
+
+	def _get_Infraction(self , cr, uid, ids, field_name, arg, context=None):
+
+		penalty_days = 0
+		penalty_deduction = 0		
+
+		if context is None:
+			context = {}
+
+		employee_id = self.browse(cr, uid, ids, context=context)[0].id
+		ids_ = self.pool.get("infraction.overflow").search(cr, uid, [('employee_id','=',employee_id)])
+		overflow_id = self.pool.get("infraction.overflow").browse(cr, uid, ids_, context=context)
+		ids_ = [ x.infraction_id for x in overflow_id ]
+		overflow_rec = self.pool.get("hr.infraction.action.discount").browse(cr, uid, ids_, context=context)	
+
+		for obj in overflow_rec:
+
+			flag = 0
+			if obj.actual_penalty :
+
+				days_calc = int(obj.actual_penalty/(obj.employee.contract_id.wage/30))
+				
+				flag = 1
+			else :
+				days_calc = obj.days		
+
+			if penalty_days+days_calc > 5:
+
+				update_days = days_calc+penalty_days - 5
+				penalty_days = 5
+				#recalculate penalty
+				new_pen = update_days * obj.employee.contract_id.wage/30
+				#update record
+				penalty_deduction = 5 * obj.employee.contract_id.wage/30
+				if flag:
+
+					self.pool.get("hr.infraction.action.discount").write(cr, uid, [obj.id], {'actual_penalty': new_pen, })
+	
+				else:
+					
+					self.pool.get("hr.infraction.action.discount").write(cr, uid, [obj.id], {'days': update_days, 'penalty_value': new_pen, })
+				
+				break
+
+			else:
+				penalty_days += days_calc
+				
+				if flag:
+					penalty_deduction += obj.actual_penalty 
+				else:
+					penalty_deduction += obj.penalty_value
+		
+				ids_ = self.pool.get("infraction.overflow").search(cr, uid, [('infraction_id','=',obj.id)])
+				self.pool.get("infraction.overflow").unlink(cr, uid, ids_)
+
+
+
+		curr_month = datetime.now().month
+		curr_year = datetime.now().year
+		range_ = calendar.monthrange(curr_year,curr_month)
+		begin_month = datetime.strptime('1-%d-%d' % (curr_month,curr_year),"%d-%m-%Y")
+		end_month = datetime.strptime('%d-%d-%d' % (range_[1],curr_month,curr_year),"%d-%m-%Y")
+		
+		
+		rec_ids = self.pool.get("hr.infraction.action.discount").search(cr, uid, [('employee','=',employee_id),('create_date','>=',begin_month),('create_date','<=',end_month)])
+
+		if rec_ids:
+
+			
+
+			records = self.pool.get("hr.infraction.action.discount").browse(cr, uid, rec_ids, context=context)
+
+			if penalty_days > 5:
+
+				for rec in records:
+			
+					self.pool.get("infraction.overflow").create(cr , uid, { 'employee_id':rec.employee ,'infraction_id':rec.id })
+
+			else:
+
+
+				for rec in records:
+
+					penalty_days = 0
+					
+					if penalty_days == 5:
+			
+						
+						self.pool.get("infraction.overflow").create(cr, uid,  {'employee_id':rec.employee,'infraction_id':rec.id})
+			
+						pass
+
+					flag = 0
+					if rec.actual_penalty :
+
+						days_calc = int(rec.actual_penalty/(rec.employee.contract_id.wage/30))  							
+						flag = 1
+					else :
+						days_calc = rec.days		
+
+					if penalty_days+days_calc > 5:
+				
+						update_days = (days_calc+penalty_days) - 5
+						penalty_days = 5
+						#recalculate penalty
+						new_pen = update_days * rec.employee.contract_id.wage/30
+						penalty_deduction = 5 * rec.employee.contract_id.wage/30
+						#update record
+						if flag:
+
+							self.pool.get("hr.infraction.action.discount").write(cr, uid, [rec.id], {'actual_penalty': new_pen, })
+	
+						else:
+					
+							self.pool.get("hr.infraction.action.discount").write(cr, uid, [rec.id], {'days': update_days, 'penalty_value':new_pen, })
+
+						self.pool.get("infraction.overflow").create(cr, uid, {'employee_id':rec.employee,'infraction_id':rec.id})
+
+					else:
+						penalty_days += days_calc
+				
+						if flag:
+							penalty_deduction += rec.actual_penalty 
+						else:
+							penalty_deduction += rec.penalty_value
+		
+						
+						self.pool.get("hr.infraction.action.discount").unlink(cr, uid, [rec.id])
+				
+		res = {}
+		res[ids[0]] = penalty_deduction
+		return res
+
+	_columns = {
+
+
+		'total_infraction': fields.function(_get_Infraction,type='float'),
+
+	}
+
+	
+hr_employee()
+
+
+
+
 
