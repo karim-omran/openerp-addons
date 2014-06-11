@@ -3,6 +3,7 @@ from osv import osv, fields
 class insurance(osv.osv):
 		
 	_name = 'hr.insurance'
+	_rec_name = 'company_name'
 	_columns = {
 		'company_name' : fields.char('Company Name',size = 60, required = True,), 
 		'employee_share' : fields.float('Employee Share',digits = (2,2), required =True,), 
