@@ -36,12 +36,6 @@ msgid "Work Phone"
 msgstr "هاتف العمل"
 
 #. module: hr_training
-#: report:addons/hr_training/report/hr_training_report.mako
-msgid "Date"
-msgstr "التاريخ"
-
-
-#. module: hr_training
 #: view:hr.training.course:0
 msgid "Register New Training Course"
 msgstr "تسجيل دورة تدريبية جديد"

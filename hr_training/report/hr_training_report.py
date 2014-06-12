@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 from openerp.report import report_sxw
 from openerp import pooler
 
@@ -11,7 +12,9 @@ class hr_training_report(report_sxw.rml_parse):
 			
 			'time':time, 
 			'getEmps':self._getEmps,
-			'get_Course_Name':self._get_Course_Name, 
+			'datetime':datetime,
+			'get_Course_Name':self._get_Course_Name,
+			'get_Current_User':self._get_Current_User, 
 		})
 
 
@@ -23,6 +26,18 @@ class hr_training_report(report_sxw.rml_parse):
 
 
 		return employees
+
+	def _get_Current_User(self, context=None):
+
+
+		if context:
+
+			if context['uid']:
+
+				return self.pool.get("res.users").browse(self.cr,self.uid, context['uid'], context=context).name
+
+		return 
+
 
 	def _get_Course_Name(self, context=None):
 

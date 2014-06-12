@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 from openerp.report import report_sxw
 from openerp import pooler
 
@@ -10,7 +11,9 @@ class course_search(report_sxw.rml_parse):
 		self.localcontext.update({
 			
 			'time':time, 
-			'get_Course':self._get_Course, 
+			'get_Course':self._get_Course,
+			'get_Current_User':self._get_Current_User,
+			'datetime':datetime, 
 		})
 
 
@@ -21,7 +24,17 @@ class course_search(report_sxw.rml_parse):
 		courses = self.pool.get("hr.training.course").browse(self.cr,self.uid,course_ids,context=context)
 
 		return courses
+	
+	def _get_Current_User(self, context=None):
 
+
+		if context:
+
+			if context['uid']:
+
+				return self.pool.get("res.users").browse(self.cr,self.uid, context['uid'], context=context).name
+
+		return 
 
 report_sxw.report_sxw('report.course.search','hr.training.course','addons/hr_training/report/course_search.mako', parser=course_search , header="internal")
 
