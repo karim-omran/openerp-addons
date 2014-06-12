@@ -33,10 +33,12 @@
 	</style>
 </head>
 <body>
-	<% setLang(context["lang"]) %>
-	<% recs = _get_permissions_of_month(data['form']) %>
-  %for record in recs:
-	</br>	
+<% import logging %>
+<%_logger = logging.getLogger(__name__)%>
+<% 	_logger.info("mako 38")%>
+<% setLang(context["lang"]) %>
+<% 	_logger.info("mako 39")%>
+</br>	
 	<table>
 		<tr>
 			<th>${_("Employee Name")}</th>
@@ -44,13 +46,16 @@
 			<th>${_("Date")}</th>
 			<th>${_("Permissions")}</th>
 		</tr>
-		<tr>
-			<td>${record.employee_name.name}</td>
-			<td>${record.type_of_permission.type_of_permission}</td>
-			<td>${record.date_of_permission}</td>
-			<td>${record.available_permission}/2</td>
-		</tr>
-	</table>
-	%endfor
+		<% recs=_get_employee_permissions(data['form']) %>
+		%for record in recs:
+			<tr>
+				<td>${record.employee_name.name}</td>
+				<td>${record.type_of_permission.type_of_permission}</td>
+				<td>${record.date_of_permission}</td>
+				<td>${record.available_permission}/2</td>
+			</tr>
+		%endfor
+</table>
+
 </body>
 </html>

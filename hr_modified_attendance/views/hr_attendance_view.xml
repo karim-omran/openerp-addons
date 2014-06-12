@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
             <xpath expr="/form/sheet/group/field[@name='action']" position="after">
                 <group>
-                    <field name="sign_in_time" on_change="cal_late_in_mins(sign_in_time, employee_id)"/>
                     <field name="mintues_late"/>
                 </group>
             </xpath>
@@ -20,7 +19,6 @@
             <field name="inherit_id" ref="hr_attendance.view_attendance_who"/>
             <field name="arch" type="xml">
             <xpath expr="/tree/field[2]" position="after">
-                    <field name="sign_in_time"/>
                     <field name="mintues_late"/>
                   
             </xpath>

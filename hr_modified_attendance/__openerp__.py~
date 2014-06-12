@@ -10,6 +10,7 @@
   'depends' : ['base','hr_attendance'],
 	'data' : [
 	'views/hr_attendance_view.xml',
+	'views/check_late_data.xml',
 	],
 
 	'installable' : True,

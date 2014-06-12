@@ -1,0 +1,37 @@
+from openerp.report import report_sxw
+from datetime import datetime
+import calendar
+import logging
+_logger = logging.getLogger(__name__)
+
+class employees_permission_report(report_sxw.rml_parse):
+	def __init__(self, cr, uid, name, context):
+		super(employees_permission_report, self).__init__(cr, uid, name, context=context)
+		self.localcontext.update({
+            
+			'_get_employee_permissions' : self._get_employee_permissions,
+        })
+
+	_logger.info("report 15")
+	def _get_employee_permissions(self, form, context=None):
+		_logger.info("report 17")
+		year=form['year']
+		month=form['month']
+		name =form['employee_name'][1]
+		_logger.info("report 21")
+		_logger.info(name)
+		_logger.info("report 23")
+
+		last_day = calendar.monthrange(int(year), int(month))[1]
+
+		date_from =datetime.strptime((str(month)+'-'+str(01)+'-'+str(year)),"%m-%d-%Y")		
+		date_to = datetime.strptime((str(month)+'-'+str(last_day)+'-'+str(year)),"%m-%d-%Y")
+
+   
+		ids_ = self.pool.get('hr.permission').search(self.cr, self.uid, [('date_of_permission', '>=',date_from),('date_of_permission','<=',date_to),('employee_name','=',name)],)
+		recs = self.pool.get('hr.permission').browse(self.cr, self.uid,ids_, context=context)
+		return recs
+
+report_sxw.report_sxw('report.employees.report','hr.permission','addons/hr_permission/report/employees_permission_report.mako',parser=employees_permission_report)
+
+

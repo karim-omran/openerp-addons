@@ -7,7 +7,15 @@
                 auto="False"
                 model="hr.permission"
                 file="hr_permission/report/employee_permission_report.mako"
-                string="Sci_Inst_Byname"
+                string="Permissions In Certain Month"
+                report_type="webkit"
+                menu="False"/>
+		<report id="employee_permission_report"
+                name="employees.permission.report"
+                auto="False"
+                model="hr.permission"
+                file="hr_permission/report/employees_permission_report.mako"
+                string="Permissions In Certain Month"
                 report_type="webkit"
                 menu="False"/>
                 

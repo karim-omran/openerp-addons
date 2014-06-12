@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-09 20:33+0000\n"
-"PO-Revision-Date: 2014-06-09 20:33+0000\n"
+"POT-Creation-Date: 2014-06-12 14:53+0000\n"
+"PO-Revision-Date: 2014-06-12 14:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,19 +41,14 @@ msgid "Companies"
 msgstr "الشركات"
 
 #. module: hr_modified_attendance
-#: field:hr.attendance,sign_in_time:0
-msgid "Sign in time"
-msgstr "وقت الحضور"
-
-#. module: hr_modified_attendance
 #: field:res.company,number_of_permissions:0
 msgid "Number of permissions"
 msgstr "عدد الاذونات"
 
 #. module: hr_modified_attendance
-#: field:res.company,month_late:0
-msgid "Month_late"
-msgstr "التاخير فى الشهر"
+#: field:hr.attendance,mintues_late:0
+msgid "Minutes Late"
+msgstr "دقائق التاخير"
 
 #. module: hr_modified_attendance
 #: field:res.company,max_late:0
@@ -61,7 +56,7 @@ msgid "Max_late"
 msgstr "اقصى حد للتاخير اليومى"
 
 #. module: hr_modified_attendance
-#: field:hr.attendance,mintues_late:0
-msgid "Mintues late"
-msgstr "التاخير"
+#: field:res.company,month_late:0
+msgid "Month_late"
+msgstr "التاخير فى الشهر"
 

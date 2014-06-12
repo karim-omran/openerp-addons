@@ -1,0 +1,14 @@
+<openerp>
+ <data noupdate="1">
+  <record forcecreate="True" id="ir_cron_scheduler" model="ir.cron">
+    <field name="name">Checking late</field>
+    <field name="interval_number">1</field>
+    <field name="interval_type">minutes</field>
+    <field name="numbercall">-1</field>
+    <field eval="True" name="doall"/>
+    <field eval="'hr.attendance'" name="model"/>
+    <field eval="'cal_late_in_mins'" name="function"/>
+    <field name="args"> () </field>
+  </record>
+ </data>
+</openerp>

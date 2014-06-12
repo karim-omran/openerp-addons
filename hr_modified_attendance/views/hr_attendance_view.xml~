@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
             <xpath expr="/form/sheet/group/field[@name='action']" position="after">
                 <group>
-                    <field name="sign_in_time" on_change="cal_late_in_mins(sign_in_time, employee_id)"/>
+                    <field name="sign_in_time"/>
                     <field name="mintues_late"/>
                 </group>
             </xpath>
@@ -20,9 +20,25 @@
             <field name="inherit_id" ref="hr_attendance.view_attendance_who"/>
             <field name="arch" type="xml">
             <xpath expr="/tree/field[2]" position="after">
-                    <field name="sign_in_time"/>
                     <field name="mintues_late"/>
                   
+            </xpath>
+            </field>
+        </record>
+	    <record id="attendance_analysis_form" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//group[@name='account_grp']" position="after">
+                <group string="Attendance Analysis">
+                   <field name="day_late" class="oe_inline"/>
+                   <field name="max_late" class="oe_inline"/>
+                   <field name="month_late" class="oe_inline"/>
+                </group>
+                <group string="Permissions/month">
+                   <field name="number_of_permissions" class="oe_inline"/>
+                </group>
             </xpath>
             </field>
         </record>

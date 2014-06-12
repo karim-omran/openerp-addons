@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-
-		<report id="permission_report"
-                name="employee.permission.report"
+		<report id="employees_permissions_report"
+                name="employees.report"
                 auto="False"
                 model="hr.permission"
-                file="hr_permission/report/employee_permission_report.mako"
+                file="hr_permission/report/employees_permission_report.mako"
                 string="Permissions In Certain Month"
                 report_type="webkit"
                 menu="False"/>
-		
                 
 	</data>
-
 </openerp>

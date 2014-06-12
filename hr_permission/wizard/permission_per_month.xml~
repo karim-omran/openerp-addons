@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 	<data>
-
         <record id="view_employees_permissions_in_month" model="ir.ui.view">
             <field name="name">Permissions</field>
             <field name="model">permission.per.month</field>
@@ -17,10 +16,10 @@
                     <button string="Cancel" class="oe_link" special="cancel" />
                 </footer>
             </form>
+				
             </field>
         </record>
-
- 		<record id="action_permission_per_month" model="ir.actions.act_window">
+				<record id="action_permission_per_month" model="ir.actions.act_window">
             <field name="name">Employess Permissions In a Certain Month</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">permission.per.month</field>
@@ -28,17 +27,52 @@
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
-
-
-         <record model="ir.values" id="sci_inst_byname_values">
+			 <record model="ir.values" id="employees_permission_month">
             <!-- <field name="model_id" ref="hr.model_hr_employee" /> -->
             <field name="name">Permissions</field>
             <field name="key2">client_print_multi</field>
             <field name="value" eval="'ir.actions.act_window,' + str(ref('action_permission_per_month'))" />
             <field name="key">action</field>
             <field name="model">hr.permission</field>
+				</record>
+<!--=========================================================================-->
+
+				 <record id="view_select_permission_for_employee" model="ir.ui.view">
+            <field name="name">Employee Permission</field>
+            <field name="model">select.permission.for.employee</field>
+            <field name="arch" type="xml">
+            <form string="Print Employe Permissions in a Certain Month" version="7.0">
+                <group col="4" string="Employess Permissions">
+                    <field name="month"/>
+										<field name="year"/>
+										<field name="employee_name"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+				<record id="action_select_permission_for_employee" model="ir.actions.act_window">
+            <field name="name">Employee Permissions In a Certain Month</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">select.permission.for.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+				<record model="ir.values" id="employee_permission_month">
+            <!-- <field name="model_id" ref="hr.model_hr_employee" /> -->
+            <field name="name">Permissions</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_select_permission_for_employee'))" />
+            <field name="key">action</field>
+            <field name="model">hr.permission</field>
         </record>
 
+ 				
 
 	</data>
 </openerp>

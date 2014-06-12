@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-09 17:30+0000\n"
-"PO-Revision-Date: 2014-06-09 17:30+0000\n"
+"POT-Creation-Date: 2014-06-12 15:22+0000\n"
+"PO-Revision-Date: 2014-06-12 15:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,7 @@ msgstr ""
 
 #. module: hr_permission
 #: view:permission.per.month:0
+#: view:select.permission.for.employee:0
 msgid "Employess Permissions"
 msgstr "أذونات الموظفين"
 
@@ -32,6 +33,7 @@ msgstr "طباعه أذونات الموظفين خلال شهر معين"
 
 #. module: hr_permission
 #: view:permission.per.month:0
+#: view:select.permission.for.employee:0
 msgid "Print"
 msgstr "طباعه"
 
@@ -63,13 +65,20 @@ msgstr "جديد"
 
 #. module: hr_permission
 #: model:ir.model,name:hr_permission.model_permission_per_month
+#: model:ir.model,name:hr_permission.model_select_permission_for_employee
 msgid "Print Employee Permission Report"
-msgstr "Print Employee Permission Report"
+msgstr "طباعه اذونات الموظفين"
 
 #. module: hr_permission
 #: selection:hr.permission,state:0
 msgid "Refused"
 msgstr "مرفوض"
+
+#. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:42
+#: report:addons/hr_permission/report/employees_permission_report.mako:44
+msgid "Employee Name"
+msgstr "أسم الموظف"
 
 #. module: hr_permission
 #: field:hr.permission,state:0
@@ -97,6 +106,12 @@ msgid "Employee permissions"
 msgstr "أذونات الموظف"
 
 #. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:43
+#: report:addons/hr_permission/report/employees_permission_report.mako:45
+msgid "Reason"
+msgstr "السبب"
+
+#. module: hr_permission
 #: view:hr.permission:0
 msgid "human resource"
 msgstr "الموارد البشريه"
@@ -107,6 +122,8 @@ msgid "type of permission"
 msgstr "نوع الأذن"
 
 #. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:44
+#: report:addons/hr_permission/report/employees_permission_report.mako:46
 #: field:hr.permission,date_of_permission:0
 msgid "Date"
 msgstr "التاريخ"
@@ -118,6 +135,8 @@ msgid "Accepted"
 msgstr "مقبول"
 
 #. module: hr_permission
+#: report:addons/hr_permission/report/employee_permission_report.mako:45
+#: report:addons/hr_permission/report/employees_permission_report.mako:47
 #: field:hr.permission,available_permission:0
 #: model:ir.ui.menu,name:hr_permission.menu_ins
 msgid "Permissions"
@@ -134,6 +153,7 @@ msgid "Refuse"
 msgstr "رفض"
 
 #. module: hr_permission
+#: model:ir.actions.report.xml,name:hr_permission.employees_permissions_report
 #: model:ir.actions.report.xml,name:hr_permission.permission_report
 msgid "Permissions In Certain Month"
 msgstr "الأذونات خلال شهر معين"
@@ -147,6 +167,11 @@ msgstr "إذن"
 #: constraint:hr.permission:0
 msgid "Error : Date must be today or after that"
 msgstr "خطـأ:التاريخ يجب ان يكون اليوم أو فى يوم بعد  ذلك"
+
+#. module: hr_permission
+#: model:ir.actions.act_window,name:hr_permission.action_select_permission_for_employee
+msgid "Employee Permissions In a Certain Month"
+msgstr "اذونات الموظف خلال شهر معين"
 
 #. module: hr_permission
 #: field:hr.employee,available_perm:0
@@ -167,10 +192,11 @@ msgstr " الموظف ليس لديه رصيد من الاذونات"
 #. module: hr_permission
 #: model:ir.actions.act_window,name:hr_permission.action_permission_per_month
 msgid "Employess Permissions In a Certain Month"
-msgstr "أذونات الموظف خلال شهر معين"
+msgstr "أذونات الموظفين خلال شهر معين"
 
 #. module: hr_permission
 #: field:hr.permission,employee_name:0
+#: field:select.permission.for.employee,employee_name:0
 msgid "Employee name"
 msgstr " أسم الموظف"
 
@@ -181,6 +207,7 @@ msgstr "موافق"
 
 #. module: hr_permission
 #: field:permission.per.month,month:0
+#: field:select.permission.for.employee,month:0
 msgid "Month"
 msgstr "الشهر"
 
@@ -196,12 +223,19 @@ msgid "Done"
 msgstr "تم"
 
 #. module: hr_permission
+#: view:select.permission.for.employee:0
+msgid "Print Employe Permissions in a Certain Month"
+msgstr "طباعة اذونات الموظف خلال شهر معين"
+
+#. module: hr_permission
 #: field:permission.per.month,year:0
+#: field:select.permission.for.employee,year:0
 msgid "Year"
 msgstr "السنه"
 
 #. module: hr_permission
 #: view:permission.per.month:0
+#: view:select.permission.for.employee:0
 msgid "Cancel"
 msgstr "الغاء"
 
@@ -217,6 +251,7 @@ msgstr "فتح"
 
 #. module: hr_permission
 #: view:permission.per.month:0
+#: view:select.permission.for.employee:0
 msgid "or"
 msgstr "أو"
 

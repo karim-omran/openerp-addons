@@ -11,7 +11,7 @@ class hr_employee(osv.osv):
 	}
 	_defaults = {
 
-		'available_perm': 2
+		'available_perm': 1
 	}
 
 
@@ -57,18 +57,18 @@ class hr_permission(osv.osv):
 		return self.write(cr, uid, ids, {'state': 'open'}, context=context)
 
 	def permission_close(self, cr, uid, ids,employee_name,context={}):
-		new_permission = -1		
+		new_permission = 0		
 		if employee_name:
 			ids_ = self.pool.get("hr.employee").search(cr, uid, [("name","=",employee_name.name)], context=context)
 			obj = self.pool.get("hr.employee").browse(cr, uid, ids_, context=context)
-			if obj[0].available_perm > 0:
-				new_permission = obj[0].available_perm - 1
-		if new_permission != -1:	
+			if obj[0].available_perm <= 3:
+				new_permission = obj[0].available_perm + 1
+		if new_permission != 4:	
 			self.pool.get("hr.employee").write(cr, uid, ids_, {'available_perm':new_permission}, context=context)
 			return self.write(cr, uid, ids, {'state': 'close'}, context=context)
 		else:
 			
-			new_permission = obj[0].available_perm - 1
+			new_permission = obj[0].available_perm + 1
 			self.pool.get("hr.employee").write(cr, uid, ids_, {'available_perm':new_permission}, context=context)
 			self.write(cr, uid, ids, {'state': 'close'}, context=context)
 			cr.commit()

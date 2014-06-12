@@ -38,11 +38,11 @@
   %for record in recs:
 	</br>	
 	<table>
-		<tr>${_("Gender :")}
-			<th>${_(Employee Name)}</th>
-			<th>${_(Reason)}</th>
-			<th>${_(Date)}</th>
-			<th>${_(Permissions)}</th>
+		<tr>
+			<th>${_("Employee Name")}</th>
+			<th>${_("Reason")}</th>
+			<th>${_("Date")}</th>
+			<th>${_("Permissions")}</th>
 		</tr>
 		<tr>
 			<td>${record.employee_name.name}</td>
