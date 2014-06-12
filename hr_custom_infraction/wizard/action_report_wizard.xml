@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <record id="view_employee_actions" model="ir.ui.view">
+            <field name="name">Actions By Employee</field>
+            <field name="model">action.report</field>
+            <field name="arch" type="xml">
+            <form string="Print Actions Report" version="7.0">
+                <group col="4" string="Actions">
+                    <field name="employee"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+ 		<record id="action_employee_actions" model="ir.actions.act_window">
+            <field name="name">Actions By Employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">action.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+         <record model="ir.values" id="action_employee_values">
+            <field name="name">Employee Infraction Action</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_employee_actions'))" />
+            <field name="key">action</field>
+            <field name="model">hr.infraction.action</field>
+        </record>
+
+
+	</data>
+</openerp>

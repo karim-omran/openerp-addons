@@ -15,6 +15,8 @@ Warning/Disciplinary Action Management
     ],
     'data': [
         'hr_custom_infraction_view.xml',
+        'report/report_view.xml',
+        'wizard/action_report_wizard.xml',
     ],
     'installable': True,
     'active': False,
