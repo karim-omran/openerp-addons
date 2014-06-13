@@ -1,15 +1,27 @@
 from openerp.report import report_sxw
 import logging
 _logger = logging.getLogger(__name__)
-
+import time
 class disability_byname_report(report_sxw.rml_parse):
 	def __init__(self, cr, uid, name, context):
 		super(disability_byname_report, self).__init__(cr, uid, name, context=context)
 		self.localcontext.update({
             
 			'_get_inst_byname' : self._get_inst_byname,
+			'get_Current_User': self._get_Current_User,
+			'time': time,
         })
 
+	def _get_Current_User(self, context=None):
+
+
+		if context:
+
+			if context['uid']:
+
+				return self.pool.get("res.users").browse(self.cr,self.uid, context['uid'], context=context).name
+
+		return 
 
 	def _get_inst_byname(self, form, context=None):
 		disability_ids = self.pool.get('hr.employee').search(self.cr, self.uid, [('disability_type', '=', form[0]),])

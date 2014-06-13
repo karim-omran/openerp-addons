@@ -1,6 +1,7 @@
 from openerp.report import report_sxw
 from datetime import datetime
 import calendar
+import time
 
 class employee_permission_report(report_sxw.rml_parse):
 	def __init__(self, cr, uid, name, context):
@@ -8,7 +9,20 @@ class employee_permission_report(report_sxw.rml_parse):
 		self.localcontext.update({
             
 			'_get_permissions_of_month' : self._get_permissions_of_month,
+			'get_Current_User': self._get_Current_User,
+			'time': time,
         })
+
+	def _get_Current_User(self, context=None):
+
+
+		if context:
+
+			if context['uid']:
+
+				return self.pool.get("res.users").browse(self.cr,self.uid, context['uid'], context=context).name
+
+		return 
 
 
 	def _get_permissions_of_month(self, form, context=None):

@@ -8,6 +8,7 @@
                 file="hr_permission/report/employees_permission_report.mako"
                 string="Permissions In Certain Month"
                 report_type="webkit"
+		webkit_header="hr_perm_header"
                 menu="False"/>
                 
 	</data>

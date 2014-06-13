@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report id="sci_inst_report"
+                name="sci.inst.byname"
+                auto="False"
+                model="scientific.institution"
+                file="scientific_institutions/report/sci_inst_byname_report.mako"
+                string="Sci_Inst_Byname"
+                report_type="webkit"
+                menu="False"/>
+                
+	</data>
+
+</openerp>

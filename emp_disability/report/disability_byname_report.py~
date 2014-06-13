@@ -12,7 +12,7 @@ class disability_byname_report(report_sxw.rml_parse):
 
 
 	def _get_inst_byname(self, form, context=None):
-		disability_ids = self.pool.get('emp.disabilities').search(self.cr, self.uid, [('disability_type', 'like', form[1]),])
+		disability_ids = self.pool.get('hr.employee').search(self.cr, self.uid, [('disability_type', '=', form[0]),])
 		_logger.info('********************______**********************')
 		_logger.info(disability_ids)
 		_logger.info('********************______**********************')

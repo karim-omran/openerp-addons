@@ -15,4 +15,4 @@ class report(report_sxw.rml_parse):
 
 		return 1009
 
-report_sxw.report_sxw('report.hr.insurance.report','hr.insurance','addons/insurance/report/report.mako',parser=report)
+report_sxw.report_sxw('report.hr.military.report','hr.military.status','addons/insurance/report/report.mako',parser=report)

@@ -2,11 +2,11 @@
 <openerp>
 	<data>
 
-		<report id="insurance"
-			name="hr.insurance.report"
+		<report id="military_status"
+			name="hr.military.report"
 			auto="False"
-			model="hr.insurance"
-			file="insurance/report/report.mako"
+			model="hr.military.status"
+			file="military_status/report/report.mako"
 			string="report"
 			report_type="webkit"/>
 	</data>

@@ -17,9 +17,9 @@ class employees_permission_report(report_sxw.rml_parse):
 		_logger.info("report 17")
 		year=form['year']
 		month=form['month']
-		name =form['employee_name']
+		name =form['employee_name'][1]
 		_logger.info("report 21")
-		_logger.info(name)[1]
+		_logger.info(name)
 		_logger.info("report 23")
 
 		last_day = calendar.monthrange(int(year), int(month))[1]

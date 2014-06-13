@@ -2,12 +2,12 @@
 <openerp>
     <data>
 
-		<report id="sci_inst_report"
+		<report id="emp_disability_report"
                 name="disability.byname.new.report"
                 auto="False"
                 model="emp.disabilities"
                 file="emp_disability/report/sci_inst_byname_report.mako"
-                string="outside_works_dates"
+                string="emp_disabilty"
                 report_type="webkit"
                 menu="False"/>
                 

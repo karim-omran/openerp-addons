@@ -2,6 +2,100 @@
 <openerp>
     <data>
 
+		<record id="sci_inst_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <script>
+        function subst() {
+        var vars={};
+        var x=document.location.search.substring(1).split('&');
+        for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+        var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+        for(var i in x) {
+        var y = document.getElementsByClassName(x[i]);
+        for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+            }
+        }
+    </script>
+</head>
+<body style="border:0; margin: 0;" onload="subst()">
+<hr>
+<div style="width:100%;">
+<div style="display:inline-block;width:50%;"> Page <span class="page"></span> of <span class="topage"></span></div><div style="display:inline-block;width:50%">${_("User")} : ${get_Current_User(context)}</div></div>
+</body>]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+    for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+	}
+    }
+</script>
+<style type="text/css">
+    ${css}
+
+
+</style>
+</head>
+<body style="border:0; margin: 0;" onload="subst()">
+	<div style="width:100%;
+		% if context["lang"] == "ar_SY":
+			direction:rtl;
+			text-align:right;
+		% endif
+	">
+	<div class="company_name" style="width:50%;display:inline-block;font-size:200%;margin-top:10px;float:right;font-style:oblique;font-family:Arial,Helvetica,sans-serif;"> Integerated Solutions for Ports </div>
+       <div class="logo" style="width:50%;display:inline-block;float:right;text-align:center;"> ${helper.embed_logo_by_name('ISPF')} </div>
+	<div class="date" style="clear:both;width:50%;display:inline-block;float:right;font-size:150%;"><div style="display:inline-block;">${_("التاريخ")} : </div><div style="display:inline-block;text-align:left;">${_(time.strftime("%d, %b %Y"))}</div></div>
+       <div class="time" style="display:inline-block;width:50%;float:right;font-size:150%;"><div style="display:inline-block;">${_("التوقيت")} :: </div><div style="display:inline-block;"> ${time.strftime("%I:%M:%S")} </div></div>
+<div style="clear:both;"></div>	<div class="issued" style="clear:both;font-size:150%;"><div style="display:inline-block;">${_("تحرير هذا الملف بواسطة")} : </div><div style="display:inline-block">${get_Current_User(context)} </div></div>
+	<br>
+    
+${_debug or ''|n} </div></body>
+</html>]]>
+            </field>
+            <field eval="60.0" name="margin_top"/>
+            <field eval="0.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+html,body{
+
+	% if context['lang'] == 'ar_SY':
+
+		direction:rtl;
+	%endif
+
+
+}
+
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+]]>
+            </field>
+            <field name="name">Scientific_instit</field>
+        </record>
+
 		<report id="sci_inst_report"
                 name="sci.inst.byname"
                 auto="False"
@@ -9,7 +103,9 @@
                 file="scientific_institutions/report/sci_inst_byname_report.mako"
                 string="Sci_Inst_Byname"
                 report_type="webkit"
-                menu="False"/>
+                menu="False"
+		webkit_header="sci_inst_header"
+		/>
                 
 	</data>
 
