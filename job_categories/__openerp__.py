@@ -12,7 +12,9 @@ This Module Allows User To Define New Jop Category And Its Upper And Lower Salar
     'depends' : ['hr_contract',],
 	'data' : [
 		'view/job_categories_view.xml',
+		'view/report_view.xml',
 		'workflow/job_categories_workflow.xml',
+		'wizard/job_cat_byname.xml',
 	],
 
 	'installable' : True,

@@ -58,6 +58,11 @@
 	        <field name="view_type">form</field>
 	        <field name="view_mode">tree,form</field>
 	        <field name="search_view_id" ref="view_scientific_institution_search"/>
+	        <field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click Here To Add Scientific Institution.
+				</p>
+			</field>
 	    </record>
 
 	    <menuitem name="Scientific Institutions" parent="hr.menu_hr_configuration" id="menu_institutions" sequence="4"/>
@@ -117,6 +122,11 @@
 	        <field name="view_type">form</field>
 	        <field name="view_mode">tree,form</field>
 	        <field name="search_view_id" ref="view_institution_department_search"/>
+	        <field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click Here To Add New Department.
+				</p>
+			</field>
 	    </record>
 
 
@@ -182,18 +192,22 @@
 	        </field>
 	    </record>
 
-	     <!-- Institution Qualification Search Action -->
-	    <record model="ir.actions.act_window" id="action_institution_qualification">
-	        <field name="name">Qualification</field>
-	        <field name="res_model">institution.qualification</field>
-	        <field name="view_type">form</field>
-	        <field name="view_mode">tree,form</field>
-	        <field name="search_view_id" ref="view_institution_qualification_search"/>
-	    </record>
+	    <!-- Institution Qualification Search Action -->
+		<record model="ir.actions.act_window" id="action_institution_qualification">
+		<field name="name">Qualification</field>
+		<field name="res_model">institution.qualification</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="search_view_id" ref="view_institution_qualification_search"/>
+		<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click Here To Add New Qualification.
+				</p>
+			</field>
+		</record>
 
 
-	    <menuitem name="Qualifications" parent="menu_institutions" id="menu_qualification_search" action="action_institution_qualification" />
-
+		<menuitem name="Qualifications" parent="menu_institutions" id="menu_qualification_search" action="action_institution_qualification" />
 
 
 	</data>

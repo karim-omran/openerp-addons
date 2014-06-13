@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <record id="view_hr_attendance_month" model="ir.ui.view">
+            <field name="name">Institution By Name</field>
+            <field name="model">sci.inst.by.name</field>
+            <field name="arch" type="xml">
+            <form string="Print Scientitfic Institution By Name" version="7.0">
+                <group col="4" string="Scientitfic Institution">
+                    <field name="sci_inst_name"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+ 		<record id="action_sci_inst_by_name" model="ir.actions.act_window">
+            <field name="name">Scientific Institution By Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sci.inst.by.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+         <record model="ir.values" id="sci_inst_byname_values">
+            <!-- <field name="model_id" ref="hr.model_hr_employee" /> -->
+            <field name="name">Scientific Institution</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_sci_inst_by_name'))" />
+            <field name="key">action</field>
+            <field name="model">scientific.institution</field>
+        </record>
+
+
+	</data>
+</openerp>

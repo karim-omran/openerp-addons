@@ -1,0 +1,13 @@
+{
+	
+	'name':'insurance',
+	'version':'1.0',
+	'description':'module for Egyption insurance',
+	'category':'Human Resurces',
+	'author':'sara',
+	'depends':['base','hr_contract',],
+	'data':['views/view.xml',],
+	'installable': True,
+	'auto_install': False,
+
+}

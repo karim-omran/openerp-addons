@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-03 22:49+0000\n"
-"PO-Revision-Date: 2014-06-03 22:49+0000\n"
+"POT-Creation-Date: 2014-06-03 11:56+0000\n"
+"PO-Revision-Date: 2014-06-03 11:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,42 +18,17 @@ msgstr ""
 #. module: insurance
 #: model:ir.actions.act_window,name:insurance.action_insurance_category
 msgid "insurance subscribed companies"
-msgstr "شركات التأمين"
+msgstr "الشركات التأمينية"
 
 #. module: insurance
-#: field:hr.insurance,owner_share:0
-msgid "Owner Share"
-msgstr "حصة صاحب العمل"
+#: field:hr.insurance,aging:0
+msgid "aging"
+msgstr "الشيخوخة"
 
 #. module: insurance
-#: field:hr.insurance,injury_share:0
-msgid "Injury Share"
-msgstr "حصة الإصابة"
-
-#. module: insurance
-#: sql_constraint:hr.insurance:0
-msgid "insurance company name With The Same Name Already Exist!"
-msgstr "يوجد مسبقا شركة تأمين بنفس البيانات"
-
-#. module: insurance
-#: view:hr.contract:0
-msgid "Insurance Company"
-msgstr "شركة التأمين"
-
-#. module: insurance
-#: view:hr.insurance:0
-msgid "companies for insurance"
-msgstr "شركات التأمين"
-
-#. module: insurance
-#: model:ir.model,name:insurance.model_hr_contract
-msgid "Contract"
-msgstr "العقد"
-
-#. module: insurance
-#: view:hr.insurance:0
-msgid "insurance"
-msgstr "التأمين"
+#: field:hr.insurance,injury:0
+msgid "injury"
+msgstr "الاصابات"
 
 #. module: insurance
 #: model:ir.model,name:insurance.model_hr_insurance
@@ -61,34 +36,100 @@ msgid "hr.insurance"
 msgstr ""
 
 #. module: insurance
-#: field:hr.insurance,aging_share:0
-msgid "Aging Share"
-msgstr "حصة الشيخوخة"
+#: view:hr.insurance:0
+msgid "companies for insurance"
+msgstr "أنواع الشركات التأمينية"
+
+#. module: insurance
+#: view:hr.insurance:0
+#: model:ir.ui.menu,name:insurance.menu_ins
+msgid "insurance"
+msgstr "تأمين"
+
+#. module: insurance
+#: model:ir.ui.menu,name:insurance.insurance_menu
+msgid "isnurance"
+msgstr "تأمين"
+
+#. module: insurance
+#: field:hr.employee,company_name_insurance:0
+#: view:hr.insurance:0
+msgid "company name"
+msgstr "اسم الشركه"
 
 #. module: insurance
 #: field:hr.insurance,employee_share:0
-msgid "Employee Share"
+msgid "Employee share"
 msgstr "حصة الموظف"
 
 #. module: insurance
-#: view:hr.contract:0
-#: model:ir.ui.menu,name:insurance.insurance_companies_menu
-msgid "Insurance Companies"
-msgstr "شركات التأمين"
+#: model:ir.model,name:insurance.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
 
 #. module: insurance
-#: constraint:hr.insurance:0
-msgid "Error : Shares Must Be Positive Number And Less Than 100!"
-msgstr "خطأ : النسبة يجب أن تكون رقم أكبر من صفر و أصغر من ١٠٠"
+#: field:hr.insurance,owner_share:0
+msgid "owner_share"
+msgstr "حصة صاحب العمل"
 
 #. module: insurance
-#: model:ir.ui.menu,name:insurance.menu_ins
+#: model:ir.ui.menu,name:insurance.isfp_config_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: insurance
+#: sql_constraint:hr.insurance:0
+msgid "company name With The Same Name Already Exist!"
+msgstr "توجد شركة بنفس الاسم"
+
+#. module: insurance
+#: view:hr.employee:0
 msgid "Insurance"
 msgstr "التأمين"
 
 #. module: insurance
-#: field:hr.contract,company_name_insurance:0
 #: field:hr.insurance,company_name:0
-msgid "Company Name"
-msgstr "إسم الشركة"
+msgid "Company name"
+msgstr "أسم الشركه"
+
+#. module: insurance
+#: view:hr.contract:0
+#: model:ir.ui.menu,name:insurance.insurance_companies
+msgid "Insurance Companies"
+msgstr "شركات التأمين"
+
+#. module: insurance
+#: model:ir.actions.report.xml,name:insurance.insurance
+msgid "report"
+msgstr "تقرير"
+
+#. module: insurance
+#: report:addons/insurance/report/report.mako:38
+msgid "insurance Report"
+msgstr "تقرير التأمين"
+
+
+#. module: insurance
+#: report:addons/insurance/report/report.mako:42
+msgid "Name"
+msgstr "الإسم"
+
+
+#. module: insurance
+#: report:addons/insurance/report/report.mako:43
+msgid "Employee Share"
+msgstr "حصة الموظف"
+
+
+#. module: insurance
+#: report:addons/insurance/report/report.mako:44
+msgid "Owner Share"
+msgstr "حصة صاحب العمل"
+
+
+#. module: insurance
+#: report:addons/insurance/report/report.mako:45
+msgid "Aging Share"
+msgstr "حصة الشيخوخة"
+
 

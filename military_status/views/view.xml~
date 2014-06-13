@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="military_status" id="military_status_menu"/>
+
+        <record id="military_status_search" model="ir.ui.view">
+            <field name="name">hr.military.status</field>
+            <field name="model">hr.military.status</field>
+            <field name="arch" type="xml">
+               <search string="military_status">
+                    <field name="employee_name" string="employee_name"/>
+                </search>
+            </field>
+        </record>
+
+           
+        <record model="ir.ui.view" id="view_military_status_tree">
+            <field name="name">hr.military.status.tree</field>
+            <field name="model">hr.military.status</field>
+          
+            <field name="arch" type="xml">
+                <tree string="military_status">
+                    <field name="employee_name"/>
+                    <field name="status"/>
+                    <field name="fromd"/>
+                    <field name="to"/>
+                    <field name="salary_status"/>
+                </tree>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="view_military_status_form">
+            <field name="name">hr.military.status.form</field>
+            <field name="model">hr.military.status</field>
+            <field name="arch" type="xml">
+                <form string="military_status" version="7.0">
+                     <div name="military_status_data">
+                        <separator string="military_status"/>
+                        <group name="military_status">
+                            <group> 
+                                <field name="employee_name" class="oe_inline"/>
+                                <field name="status" class="oe_inline"/>
+                                <field name="fromd" class="oe_inline"/>
+                                <field name="to" class="oe_inline"/>
+                                <field name="salary_status" class="oe_inline"/>
+                            </group>
+                         </group> 
+                   </div> 
+                </form>
+            </field>
+        </record>
+ 
+ 
+
+       
+       <record model="ir.actions.act_window" id="action_military_status_category">
+            <field name="name">military status</field>
+            <field name="res_model">hr.military.status</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="military_status_search"/>
+        </record>
+
+
+      
+
+        <menuitem name="Configuration" parent="military_status_menu" id="isfp_config_menu" sequence="1" />
+
+        <menuitem name="military_status" parent="isfp_config_menu" id="menu_ins" sequence="4"/>
+
+        <menuitem name="companies" parent="menu_ins"  action="action_military_status_category" />
+
+
+    </data>
+</openerp>

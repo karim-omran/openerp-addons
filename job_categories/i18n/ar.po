@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-29 22:58+0000\n"
-"PO-Revision-Date: 2014-05-29 22:58+0000\n"
+"POT-Creation-Date: 2014-06-11 20:55+0000\n"
+"PO-Revision-Date: 2014-06-11 20:55+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -86,4 +86,111 @@ msgstr "الفئات الوظيفية"
 #: model:ir.ui.menu,name:job_categories.menu_job_category
 msgid "Categories"
 msgstr "تصنيفات الوظائف"
+
+
+#. module: job_categories
+#: report:addons/job categories/report/job_cat_byname_report.mako:58
+msgid "Category Name"
+msgstr "إسم الفئة الوظيفة"
+
+#. module: job_categories
+#: report:addons/job categories/report/job_cat_byname_report.mako:67
+msgid "Lower Salary Limit"
+msgstr "الحد الأدني للأجر"
+
+
+#. module: job.categories
+#: report:addons/job categories/report/job_cat_byname_report.mako:76
+msgid "Upper Salary Limit"
+msgstr "الحد الأعلي للمرتب"
+
+#. module: job_categories
+#: report:addons/job categories/report/job_cat_byname_report.mako:85
+msgid "Upper Category"
+msgstr "الدرجة الوظيفية الأعلي"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "Print Job Category By Name"
+msgstr "طباعة تقرير لفئة وظيفية"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: job_categories
+#: view:job.categories:0
+msgid "job Categories"
+msgstr "الفئات الوظيفية"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "or"
+msgstr "أو"
+
+#. module: job_categories
+#: model:ir.ui.menu,name:job_categories.menu_jobs
+msgid "jobs Categories"
+msgstr "الفئات الوظيفية"
+
+#. module: job_categories
+#: model:ir.model,name:job_categories.model_job_cat_byname
+msgid "print job category report by name"
+msgstr "طباعة تقرير الفئات الوظيفية بالإسم"
+
+#. module: job_categories
+#: model:ir.actions.act_window,name:job_categories.action_job_cat_by_name
+msgid "Job Category By Name"
+msgstr "الفئة الوظيفية بالإسم"
+
+
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "Print"
+msgstr "طباعة"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "or"
+msgstr "أو"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: job_categories
+#: field:hr.contract,emp_job_category:0
+#: field:job.cat.byname,job_cat_name:0
+msgid "Job Category"
+msgstr "الفئة الوظيفية"
+
+#. module: job_categories
+#: view:job.cat.byname:0
+msgid "Job Categories"
+msgstr "الفئات الوظيفية"
+
+#. module: job_categories
+#: report:addons/job_categories/report/job_cat_byname_report.mako:58
+msgid "Category Name"
+msgstr "الفئة الوظيفية"
+
+#. module: job_categories
+#: report:addons/job_categories/report/job_cat_byname_report.mako:58
+msgid "Lower Salary Limit"
+msgstr "الحد الأدني للأجر"
+
+#. module: job_categories
+#: report:addons/job_categories/report/job_cat_byname_report.mako:58
+msgid "Upper Salary Limit"
+msgstr "الحد الأعلي للأجر"
+
+#. module: job_categories
+#: report:addons/job_categories/report/job_cat_byname_report.mako:58
+msgid "Upper Category"
+msgstr "الفئة الوظيفية الأعلي"
+
+
 

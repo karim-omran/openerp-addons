@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report id="emp_disability_report"
+                name="disability.byname.new.report"
+                auto="False"
+                model="emp.disabilities"
+                file="emp_disability/report/sci_inst_byname_report.mako"
+                string="emp_disabilty"
+                report_type="webkit"
+                menu="False"/>
+                
+	</data>
+
+</openerp>

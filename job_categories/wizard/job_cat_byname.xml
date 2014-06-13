@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record model="ir.ui.view" id="view_job_cat_byname">
+			<field name="name">Job Category Report By Name</field>
+			<field name="model">job.cat.byname</field>
+			<field name="arch" type="xml">
+				<form string="Print Job Category By Name" version="7.0">
+					<group col="4" string="Job Categories">
+						<field name="job_cat_name"/>
+					</group>
+					<footer>
+						<button name="print_report" string="Print" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_job_cat_by_name" model="ir.actions.act_window">
+            <field name="name">Job Category By Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">job.cat.byname</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+         <record model="ir.values" id="job_cat_byname_values">
+            <field name="name">Job Category</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_job_cat_by_name'))" />
+            <field name="key">action</field>
+            <field name="model">job.categories</field>
+        </record>
+
+		
+		
+	</data>
+</openerp>

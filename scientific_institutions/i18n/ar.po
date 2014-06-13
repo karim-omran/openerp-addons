@@ -123,7 +123,7 @@ msgstr "إسم المؤسسة التعليمية"
 #. module: scientific_institutions
 #: model:ir.model,name:scientific_institutions.model_institution_qualification
 msgid "scientific institution degrees model"
-msgstr "نموذج درجات المؤسسة العلمية"
+msgstr "نموذج مؤهلات المؤسسة العلمية"
 
 #. module: scientific_institutions
 #: view:institution.qualification:0
@@ -135,4 +135,54 @@ msgstr "المؤهل الدراسي"
 #: field:hr.employee,employee_qualification:0
 msgid "Employee Qualification"
 msgstr "المؤهل الدراسي للموظف"
+
+#. module: scientific_institutions
+#: view:sci.inst.by.name:0
+msgid "Print Scientitfic Institution By Name"
+msgstr "طباعة تقرير المؤسسات العلمية بالإسم"
+
+#. module: scientific_institutions
+#: model:ir.actions.act_window,name:scientific_institutions.action_sci_inst_by_name
+msgid "Scientific Institution By Name"
+msgstr "المؤسسات العلمية بالإسم"
+
+#. module: scientific_institutions
+#: model:ir.ui.menu,name:scientific_institutions.menu_institutions
+msgid "Scientific Institutions"
+msgstr "المؤسسات العلمية"
+
+
+#. module: scientific_institutions
+#: view:scientific.institution:0
+msgid "institution"
+msgstr "المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: view:sci.inst.by.name:0
+msgid "Scientitfic Institution"
+msgstr "المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: model:ir.actions.act_window,name:scientific_institutions.action_scientific_institution
+#: field:sci.inst.by.name,sci_inst_name:0
+#: view:scientific.institution:0
+msgid "Institution"
+msgstr "المؤسسة التعليمية"
+
+#. module: scientific_institutions
+#: view:sci.inst.by.name:0
+msgid "Print"
+msgstr "طباعة"
+
+#. module: scientific_institutions
+#: view:sci.inst.by.name:0
+msgid "or"
+msgstr "أو"
+
+
+#. module: scientific_institutions
+#: view:sci.inst.by.name:0
+msgid "Cancel"
+msgstr "إلغاء"
+
 

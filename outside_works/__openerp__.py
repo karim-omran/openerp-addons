@@ -13,6 +13,8 @@ This Module Allows User To Define New Outside Works.""",
 	'depends' : ['base','hr_contract'],
 	'data' : [
 		'view/outside_works_view.xml',
+		'view/report_view.xml',
+		'wizard/hr_attendance_bymonth_view.xml',
 	],
 
 	'installable' : True,

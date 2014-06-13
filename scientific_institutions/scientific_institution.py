@@ -17,10 +17,11 @@ class scientific_institution(osv.osv):
 
 	_columns = {
 
-			'inst_name' : fields.char(
-				'Institution Name',
-				size=100,
-				required=True,
+			'inst_name' : fields.many2one(
+					'institution.name',
+					'Institution Name',
+					onupdate='cascade',
+					required=True,
 				),
 
 			'study_years' : fields.selection(
@@ -32,7 +33,6 @@ class scientific_institution(osv.osv):
 			'department' : fields.many2one(
 					'institution.department',
 					'Department',
-					ondelete='set null',
 					onupdate='cascade',
 					required=True,
 				),
@@ -40,7 +40,6 @@ class scientific_institution(osv.osv):
 			'qual_degree' : fields.many2one(
 					'institution.qualification',
 					'Qualification',
-					ondelete='set null',
 					onupdate='cascade',
 					required=True,
 				),
@@ -50,6 +49,34 @@ class scientific_institution(osv.osv):
 	_sql_constraints = [('rec_uniq','unique(inst_name,study_years,department,qual_degree)', 'Institution With The Same Data Already Exist!')]
 
 #==========================================================================================
+
+#============================ INSTITUTION NAME CLASS==================================
+
+class institution_name(osv.osv):
+	_name = 'institution.name'
+
+	_rec_name = 'inst_name'
+
+	_description = 'institution name model'
+	
+	_columns = {
+
+			'inst_name' : fields.char(
+				'Institution Name',
+				size=200,
+				required=True,
+				),
+		}
+
+	_defaults = {
+			'inst_name' : '',
+		}
+
+	_sql_constraints = [('inst_uniq','unique(inst_name)', 'Institution With The Same Name Already Exist!')]
+
+#==========================================================================
+
+#======================== INSTITUTION DEPARTMENT CLASS=====================
 
 class institution_department(osv.osv):
 

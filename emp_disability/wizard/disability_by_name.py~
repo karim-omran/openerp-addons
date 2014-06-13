@@ -1,0 +1,27 @@
+import time
+
+from openerp.osv import osv, fields
+
+class disability_by_name(osv.osv_memory):
+    _name = 'disability.by.name'
+    _description = 'Print outside works for employees in a duration'
+    _columns = {'disability_name' : fields.many2one('emp.disabilities','Disability Name',required=True,),}
+
+
+
+    def print_report(self, cr, uid, ids, data, context=None):
+
+        datas = {
+        'model': 'emp.disabilities',
+        'form': self.read(cr, uid, ids, context=context)[0]
+        }
+
+
+
+        return {
+        'type': 'ir.actions.report.xml',
+        'report_name': 'disability.byname.new.report',
+        'datas': datas,
+        }
+
+disability_by_name()

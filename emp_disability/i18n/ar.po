@@ -43,6 +43,11 @@ msgid "Disability Type"
 msgstr "نوع الإصابة"
 
 #. module: emp_disability
+#: model:ir.actions.act_window,name:emp_disability.action_diability_by_name
+msgid "disability"
+msgstr "الإصابة"
+
+#. module: emp_disability
 #: field:emp.disabilities,notes:0
 msgid "Disability Notes"
 msgstr "ملاحظات"
@@ -66,4 +71,38 @@ msgstr "نوع الإصابة"
 #: view:emp.disabilities:0
 msgid "disability type"
 msgstr "نوع الإصابة"
+
+
+#. module: emp_disability
+#: field:disability.by.name,disability_name:0
+msgid "Disability Name"
+msgstr "نوع الإصابة"
+
+
+#. module: emp_disability
+#: view:disability.by.name:0
+msgid "Print"
+msgstr "طباعة"
+
+#. module: emp_disability
+#: view:emp.disabilities:0
+#: model:ir.ui.menu,name:emp_disability.menu_disabilities_types
+msgid "Disabilities"
+msgstr "الإصابات"
+
+#. module: emp_disability
+#: view:disability.by.name:0
+msgid "or"
+msgstr "أو"
+
+#. module: emp_disability
+#: view:disability.by.name:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: emp_disability
+#: view:disability.by.name:0
+msgid "Print Disability By Name Report"
+msgstr "طباعة تقرير بالإسم"
+
 

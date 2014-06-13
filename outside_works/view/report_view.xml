@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report id="outside_work_report"
+                name="outside.works.dates"
+                auto="False"
+                model="outside.works.forms"
+                file="outside_works/report/outside_work_report.mako"
+                string="outside_works_dates"
+                report_type="webkit"
+                menu="False"/>
+                
+	</data>
+
+</openerp>

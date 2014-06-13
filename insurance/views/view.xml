@@ -3,11 +3,11 @@
     <data>
 
         <record id="insurance_search" model="ir.ui.view">
-            <field name="name">hr.insurance.search</field>
+            <field name="name">hr.insurance</field>
             <field name="model">hr.insurance</field>
             <field name="arch" type="xml">
                <search string="insurance">
-                    <field name="company_name"/>
+                    <field name="company_name" string="company name"/>
                 </search>
             </field>
         </record>
@@ -22,8 +22,8 @@
                     <field name="company_name"/>
                     <field name="employee_share"/>
                     <field name="owner_share"/>
-                    <field name="injury_share"/>
-                    <field name="aging_share"/>
+                    <field name="injury"/>
+                    <field name="aging"/>
                 </tree>
             </field>
         </record>
@@ -40,8 +40,8 @@
                                 <field name="company_name" class="oe_inline"/>
                                 <field name="employee_share" class="oe_inline"/>
                                 <field name="owner_share" class="oe_inline"/>
-                                <field name="injury_share" class="oe_inline"/>
-                                <field name="aging_share" class="oe_inline"/>
+                                <field name="injury" class="oe_inline"/>
+                                <field name="aging" class="oe_inline"/>
                             </group>
                         </group>
                     </div>
@@ -49,21 +49,7 @@
             </field>
         </record>
  
-       <record id="hr_insurance_contract" model="ir.ui.view">
-            <field name="name">hr.insurance_contract.form</field>
-            <field name="model">hr.contract</field>
-            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
-            <field name="arch" type="xml">
-                 <notebook>
-                        <page string="Insurance Companies" name="Insurance Companies">
-                                <group name="company_name" string="Insurance Company">
-                                    <field name="company_name_insurance"/>
-                                </group>
-                        </page>
-                </notebook>
-            </field>
-
-        </record> 
+ 
 
        
         <record model="ir.actions.act_window" id="action_insurance_category">
@@ -72,12 +58,33 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="insurance_search"/>
+                        <field name="help" type="html">
+
+				<p class="oe_view_nocontent_create">
+					Click here to add Insurance Company
+				</p>
+
+			</field>
         </record>
 
 
-        <menuitem name="Insurance" parent="hr.menu_hr_configuration" id="menu_ins" sequence="4"/>
+       <record id="hr_insurance_contract" model="ir.ui.view">
+            <field name="name">hr.insurance_contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                 <notebook>
+                        <page string="Insurance Companies" name="Insurance Companies">
+                                <group name="company_name" string="company_name">
+                                    <field name="company_name_insurance"/>
+                                </group>
+                        </page>
+                </notebook>
+            </field>
 
-        <menuitem name="Insurance Companies" parent="menu_ins" id="insurance_companies_menu"  action="action_insurance_category" />
+        </record>
+
+        <menuitem id="insurance_companies" name="Insurance Companies" parent="hr.menu_hr_configuration"  action="action_insurance_category" />
 
 
     </data>

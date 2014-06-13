@@ -111,7 +111,53 @@ msgid "Start Date"
 msgstr "تاريخ البداية"
 
 #. module: outside_works
+#: field:hr.outside.works,end_date:0
+#: field:outside.works.forms,end_date:0
+msgid "End Date"
+msgstr "تاريخ نهاية المأمورية"
+
+#. module: outside_works
 #: view:outside.works.forms:0
 msgid "Outside Work Calendar"
 msgstr "تقويم المأموريات"
+
+
+#. module: outside_works
+#: model:ir.actions.act_window,name:outside_works.action_hr_attendance_month
+msgid "outside works Report"
+msgstr "تقرير المأموريات"
+
+#. module: outside_works
+#: field:hr.outside.works,start_date:0
+#: field:outside.works.forms,start_date:0
+msgid "Start Date"
+msgstr "تاريخ بداية المأمورية"
+
+#. module: outside_works
+#: view:hr.outside.works:0
+msgid "Print"
+msgstr "طباعة"
+
+#. module: outside_works
+#: view:hr.outside.works:0
+msgid "or"
+msgstr "أو"
+
+#. module: outside_works
+#: view:hr.outside.works:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+
+#. module: outside_works
+#: report:addons/outside_works/report/sci_inst_byname_report.mako:58
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: outside_works
+#: report:addons/outside_works/report/sci_inst_byname_report.mako:38
+msgid "Outside Work Type"
+msgstr "نوع المأمورية"
+
+
 

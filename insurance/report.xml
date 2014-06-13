@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<report id="insurance"
+			name="hr.insurance.report"
+			auto="False"
+			model="hr.insurance"
+			file="insurance/report/report.mako"
+			string="report"
+			report_type="webkit"/>
+	</data>
+</openerp>

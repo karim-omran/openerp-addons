@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<report id="military_status"
+			name="hr.military.report"
+			auto="False"
+			model="hr.military.status"
+			file="military_status/report/report.mako"
+			string="report"
+			report_type="webkit"/>
+	</data>
+</openerp>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+	
+	
+		<record id="hr_training" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <script>
+        function subst() {
+        var vars={};
+        var x=document.location.search.substring(1).split('&');
+        for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+        var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+        for(var i in x) {
+        var y = document.getElementsByClassName(x[i]);
+        for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+            }
+        }
+    </script>
+</head>
+<body style="border:0; margin: 0;" onload="subst()">
+    <table style="border-top: 1px solid black; width: 100%">
+        <tr >
+            <td style="text-align:right;font-size:12;" width="95%">Page <span class="page"/></td><td style="text-align:left;font-size:12;">  of <span class="topage"/></td>
+        </tr>
+    </table>
+</body>]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header" style="border-bottom: 0px solid black; width: 100%">
+            <tr>
+                <td style="text-align:right"> </td>
+            </tr>
+            <tr>
+                <td><br/></td>
+                <td style="text-align:right"> </td>
+            </tr>
+            <tr>
+                <td>HR Traninig Department</td>
+                <td/>
+            </tr>
+    
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+            </field>
+            <field eval="55.0" name="margin_top"/>
+            <field eval="0.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+]]>
+	
+	            </field>
+            <field name="name">Training HR</field>
+        </record>
+	
+
+		<report id="job_cat_byname_report" 
+				name="job.cat.byname" 
+				auto="False" 
+				model="job.categories" 
+				file="job_categories/report/job_cat_byname_report.mako" 
+				string="Job_Cat_ByName" 
+				report_type="webkit" 
+				menu="False"
+				webkit_header="hr_training"
+			/>
+
+
+	</data>
+</openerp>
