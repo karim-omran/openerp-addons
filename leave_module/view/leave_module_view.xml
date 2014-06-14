@@ -48,8 +48,8 @@
 	                            <field name="occasion_leave" class="oe_inline"/>
 	                            <field name="start_date" class="oe_inline"/>
 	                            <field name="end_date" class="oe_inline"/>
-				    <field name="leave_condition" on_change="onchange_condition(leave_condition)" class="oe_inline"/>
-	                            <field name="deducted_days" class="oe_inline"/>
+				    			<field name="leave_condition" class="oe_inline"/>
+	                            <field name="deducted_days" attrs="{'invisible':[('leave_condition', '=', 'fully granted')]}"  class="oe_inline"/>
 	                        
 	                        </group>
 	                    </group>

@@ -7,7 +7,7 @@ class formal_vacations(osv.osv):
 	_name = 'formal.vacations'
 
 	#_inherit = 'hr.employee'
-
+	_rec_name = 'occasion_leave'
 	_columns = {
 
 			
