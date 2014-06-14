@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <!-- New Reward Type Form View -->
+        <record id="reward_emp_form" model="ir.ui.view">
+
+            <field name="name">reward.emp.form</field>
+            <field name="model">reward.emp</field>
+            <field name="arch" type="xml">
+
+                <form string="Reward Types" version="7.0">
+                    <group name="reward_group" col="2">
+                        <field name="reward_name" class="oe_inline"/>
+                        <field name="reward_type" class="oe_inline"/>
+                        <field name="reward_notes" class="oe_inline"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- to make tree -->
+        <record id="reward_emp_tree" model="ir.ui.view">
+
+            <field name="name">reward.emp.tree</field>
+            <field name="model">reward.emp</field>
+            <field name="arch" type="xml">
+                <tree string="Reward Types">
+                    <field name="reward_name"/>
+                    <field name="reward_type"/>
+                    <field name="reward_notes"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_reward_emp">
+            <field name="name">Reward Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">reward.emp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="reward_emp_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to Create New Type of Reward..
+                </p>
+            </field>
+        </record>
+
+        <!-- to make in menu tap -->
+        <menuitem id="hr.reward_emp" name="Reward Types" parent="hr.menu_hr_configuration" sequence="10" action="action_reward_emp"/>
+
+
+
+        <!--##############################################################################################-->
+        <record id="reward_reg_form" model="ir.ui.view">
+
+            <field name="name">reward.reg.form</field>
+            <field name="model">reward.reg</field>
+            <field name="arch" type="xml">
+                <form string="Register Reward for Employees" version="7.0">
+
+                    <group col="2">
+                        <field name="employee"/>
+                        <field name="reward_name"/>
+
+                        <field name="date"/>
+                        <field name="value"/>
+                        <field name="status"/>
+                        <field name="notes"/>
+                    </group>
+
+                </form>
+            </field>
+
+        </record>
+
+
+        <record id="reward_reg_tree" model="ir.ui.view">
+
+
+            <field name="name">reward.reg.tree</field>
+            <field name="model">reward.reg</field>
+            <field name="arch" type="xml">
+                <tree string="Employees have Rewards">
+                    <field name="employee"/>
+
+                </tree>
+            </field>
+
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_reward_reg">
+            <field name="name">Register</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">reward.reg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="reward_reg_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click Here To Register a Reward for an Employee
+                </p>
+            </field>
+        </record>
+
+
+        <!-- inherit from employee -->
+        <record id="reward_employee_extd_form" model="ir.ui.view">
+
+            <field name="name">reward.employee.extd.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name= 'active_group']" position="before">
+
+
+                    <group string="Employee">
+                        <field name="employee_name_reward" nolabel="1">
+
+                        </field>
+                    </group>
+
+
+                </xpath>
+            </field>
+
+        </record>
+
+
+        <menuitem name="Rewards" id="reward_menu_main" parent="hr.menu_hr_root"/>
+
+        <menuitem id="hr.reward_reg" name="Register Reward For Employee" parent="reward_menu_main" sequence="10"  action="action_reward_reg"/>
+
+
+
+
+    </data>
+</openerp>

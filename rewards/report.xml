@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<report id="reward_emp"
+			name="reward.emp.report"
+			auto="False"
+			model="reward.emp"
+			file="reward_emp/report/report.mako"
+			string="File"
+			report_type="webkit"/>
+	</data>
+</openerp>
