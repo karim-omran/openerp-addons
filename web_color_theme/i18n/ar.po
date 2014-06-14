@@ -1,0 +1,146 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* web_color_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-09 03:18+0000\n"
+"PO-Revision-Date: 2014-06-09 03:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_color_theme
+#: model:ir.ui.menu,name:web_color_theme.web_theme_config
+msgid "Web Theme Configuration"
+msgstr "اعدادات الالوان"
+
+#. module: web_color_theme
+#: field:web.theme,button_color_x:0
+#: field:web.theme,button_color_y:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_button_color_x:0
+#: field:web.theme.wizard,module_button_color_y:0
+msgid "Button Background Color"
+msgstr "خلفيه الأزرار"
+
+#. module: web_color_theme
+#: field:web.theme,view_manager_header_gradient_x:0
+#: field:web.theme,view_manager_header_gradient_y:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_view_manager_header_gradient_x:0
+#: field:web.theme.wizard,module_view_manager_header_gradient_y:0
+msgid "View Manager Header Gradient"
+msgstr "قائمة الاستمارة العلوية "
+
+#. module: web_color_theme
+#: model:ir.model,name:web_color_theme.model_web_theme
+msgid "web.theme"
+msgstr "اعدادات الالوان"
+
+#. module: web_color_theme
+#: field:web.theme,left_bar_color:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_left_bar_color:0
+msgid "Left Bar Color"
+msgstr "القائمة اليمني"
+
+#. module: web_color_theme
+#: field:web.theme,font_color:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_font_color:0
+msgid "Font Color"
+msgstr "الخط"
+
+#. module: web_color_theme
+#: field:web.theme,top_bar_color_x:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_top_bar_color_x:0
+msgid "Top Bar Gradient"
+msgstr " القائمة الرئيسية العلويه"
+
+#. module: web_color_theme
+#: field:web.theme,many2one_font_color:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_many2one_font_color:0
+msgid "Link Color"
+msgstr "الروابط"
+
+#. module: web_color_theme
+#: field:web.theme,top_bar_color_y:0
+#: field:web.theme.wizard,module_top_bar_color_y:0
+msgid "Top Bar Color"
+msgstr "شريط العنوان"
+
+#. module: web_color_theme
+#: field:web.theme,main_menu_font:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_main_menu_font:0
+msgid "Main Menu Font Color"
+msgstr "القائمة الرئيسية "
+
+#. module: web_color_theme
+#: view:web.theme.wizard:0
+msgid "or"
+msgstr "او"
+
+#. module: web_color_theme
+#: field:web.theme,sub_menu_font:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_sub_menu_font:0
+msgid "Sub Menu Font Color"
+msgstr "فروع المنبثقة من القائمة الرئيسة "
+
+#. module: web_color_theme
+#: field:web.theme,top_bar_menu_font:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_top_bar_menu_font:0
+msgid "Top Bar Menu Font Color"
+msgstr "القائمة الرئيسية العلويه"
+
+#. module: web_color_theme
+#: model:ir.model,name:web_color_theme.model_web_theme_wizard
+msgid "web.theme.wizard"
+msgstr ""
+
+#. module: web_color_theme
+#: field:web.theme,tab_string_color:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_tab_string_color:0
+msgid "Tab String Font Color"
+msgstr "القائمة الرئيسية العليا"
+
+#. module: web_color_theme
+#: view:web.theme.wizard:0
+msgid "General Settings"
+msgstr "الاعدادات العامة "
+
+#. module: web_color_theme
+#: view:web.theme.wizard:0
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: web_color_theme
+#: view:web.theme.wizard:0
+msgid "Apply"
+msgstr "حفظ"
+
+#. module: web_color_theme
+#: model:ir.actions.act_window,name:web_color_theme.action_web_theme_form_view
+#: model:ir.ui.menu,name:web_color_theme.web_theme_root
+#: view:web.theme.wizard:0
+msgid "Web Theme"
+msgstr " الألوان"
+
+#. module: web_color_theme
+#: field:web.theme,form_background_url:0
+#: view:web.theme.wizard:0
+#: field:web.theme.wizard,module_form_background_url:0
+msgid "Form Background image URL"
+msgstr "رابط صورة للخلفيه"
+

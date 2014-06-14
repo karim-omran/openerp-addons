@@ -300,6 +300,7 @@ class hr_employee(osv.osv):
 		
 				ids_ = self.pool.get("infraction.overflow").search(cr, uid, [('infraction_id','=',obj.id)])
 				self.pool.get("infraction.overflow").unlink(cr, uid, ids_)
+				self.pool.get("hr.infraction.action.discount").unlink(cr, uid, [obj.id])
 
 
 
@@ -326,10 +327,10 @@ class hr_employee(osv.osv):
 
 			else:
 
-
+				
 				for rec in records:
 
-					penalty_days = 0
+					
 					
 					if penalty_days == 5:
 			

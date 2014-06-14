@@ -12,7 +12,8 @@ Warning/Disciplinary Action Management
         'hr_employee_state',
         'hr_security',
         'hr_transfer',
-        'hr_infraction'
+        'hr_infraction',
+        'report_webkit',
     ],
     'data': [
         'hr_custom_infraction_view.xml',

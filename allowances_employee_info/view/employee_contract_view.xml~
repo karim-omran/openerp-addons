@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <record id="company_tablesheet_mycompany_extd_form" model="ir.ui.view">
+
+            <field name="name">base.extd_form</field>
+            <!--name of model inherit-->
+            <field name="model">hr.contract</field>
+
+            <!-- name of form -->
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+
+            <field name="arch" type="xml">
+                <!--group name fe asasy-->
+                <xpath expr="//group[@string='Salary and Advantages']/field[@name='advantages']" position="after">
+
+                        <!--fields of me-->
+                        <field name="instead_of_performing"/>
+                        <field name="instead_of_excellence" />
+                        <field name="rather_than_the_nature_of_the_work"/>
+                        <field name="instead_of_scarcity" />
+                        <field name="representation_allowance"/>
+                        <field name="instead_of_establishing" />
+                        <field name="instead_phone"/>
+                        <field name="other_allowances" />
+			<field name="incentives_for_projects" />
+			<field name="the_amount,_which_is_deducted_from_the_basic_insurance" />
+			<field name="the_amount,_which_is_deducted_from_the_changing_insurance" />
+			<field name="guaranteed_bonuses" />
+
+                </xpath>
+            </field>
+
+        </record>
+
+	</data>
+</openerp>

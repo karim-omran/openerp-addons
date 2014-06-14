@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <record id="company_tablesheet_mycompany_extd_form" model="ir.ui.view">
+
+            <field name="name">base.extd_form</field>
+            <!--name of model inherit-->
+            <field name="model">res.company</field>
+
+            <!-- name of form -->
+            <field name="inherit_id" ref="base.view_company_form"/>
+
+            <field name="arch" type="xml">
+                <!--group name fe asasy-->
+                <xpath expr="//group[@name='account_grp']" position="before">
+
+
+                        <!--fields of me-->
+
+                        <field name="day_late" />
+                        <field name="max_late" />
+                        <field name="max_month_late"/>
+
+
+                </xpath>
+            </field>
+
+        </record>
+
+	</data>
+</openerp>

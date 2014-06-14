@@ -24,8 +24,8 @@
             <field name="arch" type="xml">
                 <form string="Infraction Category" version="7.0">
                     <sheet>
-                        <field name="name"/>
-                        <field name="code"/>
+                        <label for="name">name</label><field name="name"/>
+                        <label for="code">code</label><field name="code"/>
                     </sheet>
                 </form>
             </field>
