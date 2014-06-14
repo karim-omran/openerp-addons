@@ -1,0 +1,144 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* leave_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140515-231354\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-10 10:15+0000\n"
+"PO-Revision-Date: 2014-06-10 10:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:37
+msgid "end date :"
+msgstr "الى"
+
+#. module: leave_module
+#: sql_constraint:formal.vacations:0
+msgid "Occasion With The Same Data Already Exist!"
+msgstr "هذه المناسبه بنفس البيانات موجوده بالفعل"
+
+#. module: leave_module
+#: model:ir.model,name:leave_module.model_formal_vacations
+msgid "formal.vacations"
+msgstr "اﻻجازات الرسميه"
+
+#. module: leave_module
+#: selection:formal.vacations,leave_condition:0
+msgid "leaves days will decrease"
+msgstr "سيتم خصم ايام من الموظف"
+
+#. module: leave_module
+#: model:ir.ui.menu,name:leave_module.menu_leaves_search
+msgid "Leave Info"
+msgstr "اﻻجازه الرسميه"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:39
+msgid "number of deducted days :"
+msgstr "عدد اﻻيام التى سيتم خصمها"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:38
+msgid "leave condition :"
+msgstr "شرط اﻻجازه"
+
+#. module: leave_module
+#: view:formal.vacations:0
+msgid "Leave Information"
+msgstr "اﻻجازه الرسميه"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:36
+msgid "start date :"
+msgstr "من"
+
+#. module: leave_module
+#: field:formal.vacations,start_date:0
+msgid "From : "
+msgstr "من"
+
+#. module: leave_module
+#: model:ir.actions.report.xml,name:leave_module.leave_report
+msgid "Leave_ByYear"
+msgstr "اﻻجازات الرسميه فى خلال السنه"
+
+#. module: leave_module
+#: field:formal.vacations,end_date:0
+msgid "To : "
+msgstr "الى"
+
+#. module: leave_module
+#: model:ir.ui.menu,name:leave_module.menu_leaves
+msgid "Formal Vacations"
+msgstr "اﻻجازات الرسميه"
+
+#. module: leave_module
+#: selection:formal.vacations,leave_condition:0
+msgid "fully granted"
+msgstr "يتم منحها بالكامل"
+
+#. module: leave_module
+#: view:formal.vacations:0
+msgid "Leaves"
+msgstr "اﻻجازات الرسميه"
+
+#. module: leave_module
+#: sql_constraint:new.occasion:0
+msgid "Occasion With The Same Name Already Exist!"
+msgstr "هذه المناسبه بنفس اﻻسم موجوده بالفعل"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:34
+msgid "Formal Vacation Report"
+msgstr "تقرير اﻻجازات الرسميه"
+
+#. module: leave_module
+#: model:ir.actions.act_window,name:leave_module.action_formal_vacations
+#: model:ir.ui.menu,name:leave_module.leave_modules
+msgid "Leave"
+msgstr "اﻻجازه الرسميه"
+
+#. module: leave_module
+#: field:formal.vacations,occasion_leave:0
+#: field:new.occasion,occasion_name:0
+msgid "Occasion"
+msgstr "المناسبه"
+
+#. module: leave_module
+#: report:addons/leave_module/report/leave_report.mako:35
+msgid "occasion of leave:"
+msgstr "مناسبة اﻻجازه"
+
+#. module: leave_module
+#: field:formal.vacations,leave_condition:0
+msgid "Leave Condition : "
+msgstr "شرط اﻻجازه"
+
+#. module: leave_module
+#: field:formal.vacations,deducted_days:0
+msgid "Deducted Days From Employee : "
+msgstr "اﻻيام التى ستخصم من الموظف"
+
+#. module: leave_module
+#: view:formal.vacations:0
+msgid "leave"
+msgstr "اﻻجازه الرسميه"
+
+#. module: leave_module
+#: view:formal.vacations:0
+msgid "occasion"
+msgstr "المناسبه"
+
+#. module: leave_module
+#: model:ir.model,name:leave_module.model_new_occasion
+msgid "new.occasion"
+msgstr "المناسبه"
+

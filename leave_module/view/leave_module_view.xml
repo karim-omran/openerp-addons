@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- Top menu item -->
+        <menuitem name="Leave" id="leave_modules"/>
+
+
+        <!-- formal vacations Search View -->
+        <record model="ir.ui.view" id="view_formal_vacations_search">
+        	<field name="name">formal.vacations.search</field>
+        	<field name="model">formal.vacations</field>
+        	<field name="arch" type="xml">
+        		<search string="leave">
+        			<field name="occasion_leave" string="occasion"/>
+        		</search>
+        	</field>
+        </record>
+	
+
+<!-- formal vacations // Tree View || list view \\-->
+        <record model="ir.ui.view" id="view_formal_vacations_tree">
+            <field name="name">formal.vacations.tree</field>
+            <field name="model">formal.vacations</field>
+            <field name="field_parent"></field>
+            <field name="arch" type="xml">
+                <tree string="Leaves">
+                        <field name="occasion_leave"/>
+                	<field name="start_date"/>
+                	<field name="end_date"/>
+			<field name="leave_condition"/>
+                	<field name="deducted_days"/>
+                </tree>
+            </field>
+        </record>
+
+
+<!-- New formal vacations // Form View \\-->
+	    <record model="ir.ui.view" id="view_formal_vacations_form">
+	        <field name="name">formal.vacations.form</field>
+	        <field name="model">formal.vacations</field>
+	        <field name="arch" type="xml">
+	            <form string="Leaves" version="7.0">
+	                <div name="leave_info">
+	                    <separator string="Leave Information"/>
+	                    <group name="leaves">
+	                        <group>
+	                            <field name="occasion_leave" class="oe_inline"/>
+	                            <field name="start_date" class="oe_inline"/>
+	                            <field name="end_date" class="oe_inline"/>
+				    			<field name="leave_condition" class="oe_inline"/>
+	                            <field name="deducted_days" attrs="{'invisible':[('leave_condition', '=', 'fully granted')]}"  class="oe_inline"/>
+	                        
+	                        </group>
+	                    </group>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+
+<!-- formal vacations Search Action -->
+	    <record model="ir.actions.act_window" id="action_formal_vacations">
+	        <field name="name">Leave</field>
+	        <field name="res_model">formal.vacations</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="search_view_id" ref="view_formal_vacations_search"/>
+	    </record>
+
+
+<menuitem name="Configuration" parent="leave_modules"
+         id="base.menu_lunch_survey_root" sequence="30" />
+
+	    <menuitem name="Formal Vacations" parent="hr.menu_hr_configuration" id="menu_leaves" sequence="4"/>
+
+	    <menuitem name="Leave Info" parent="menu_leaves" id="menu_leaves_search" action="action_formal_vacations" />
+
+
+	
+
+
+	</data>
+</openerp>

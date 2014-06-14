@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report id="leave_report"
+                name="leave.byyear"
+                auto="False"
+                model="formal.vacations"
+                file="leave_module/report/sci_inst_byname_report.mako"
+                string="Leave_ByYear"
+                report_type="webkit"
+                menu="False"/>
+                
+	</data>
+
+</openerp>
