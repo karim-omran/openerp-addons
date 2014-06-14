@@ -141,6 +141,40 @@ class register_employee(osv.osv):
 
 	_order = "course asc"
 
+	
+	def name_get(self, cr, uid, ids, context=None):
+	
+		res = []
+			
+		if context is None:
+			context = {}
+
+		if not ids:
+			return []
+		aux = ''
+
+		for obj in self.browse(cr,uid,ids,context=context):
+
+			if obj.employee:
+				
+				aux = obj.employee.name
+			else:
+
+				aux = obj.id
+			aux = aux + ' ('
+
+			if obj.course:
+
+				aux = aux + obj.course.name
+
+			aux = aux + " - "
+
+
+			res.append((obj.id, aux))
+	
+
+		return res
+
 class hr_employee(osv.osv):
 
 	_name = "hr.employee"

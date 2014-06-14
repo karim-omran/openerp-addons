@@ -21,8 +21,9 @@ class hr_training_report(report_sxw.rml_parse):
 	def _getEmps(self, context=None):
 
 		objs = self.pool.get("hr.training.register").search(self.cr, self.uid, [("course","=",self.ids[0])])
-		
-		employees= self.pool.get("hr.employee").browse(self.cr, self.uid, objs, context=context)
+		employees_ids = self.pool.get("hr.training.register").browse(self.cr, self.uid, objs, context=context)
+		id_list = [ x.employee.id for x in employees_ids ] 
+		employees= self.pool.get("hr.employee").browse(self.cr, self.uid, id_list, context=context)
 
 
 		return employees

@@ -17,6 +17,7 @@ courses and keeps track of both.
 		'hr_training_view.xml',
 		'hr_training_report.xml',
 		'wizard/course_search.xml',
+		'security/ir.model.access.csv',
 
 	],
 	'installable': True,

@@ -220,8 +220,8 @@ class hr_holidays(osv.osv):
 					
 					ids_ = self.pool.get("hr.employee").search(cr, uid, [('id','=',employee_id)])
 					children = self.pool.get("hr.employee").browse(cr, uid, ids_, context=context)[0].children
-				
-					if children == 0:
+					gender = self.ppol.get("hr.employee").browse(cr, uid, ids_, context=context)[0].gender	
+					if children == 0 or not gender or gender == "male":
 						res = 0
 					else:
 
