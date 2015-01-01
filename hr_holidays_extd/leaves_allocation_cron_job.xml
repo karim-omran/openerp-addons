@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.cron" id="leaves_allocaiton_cron">
+                  <field name="name">Leaves Allocation Cron</field>
+                  <field name="interval_number">1</field>
+                  <field name="interval_type">days</field>
+                  <field name="numbercall">-1</field>
+                  <field eval="False" name="doall"/>
+                  <field eval="'hr.holidays'" name="model"/>
+                  <field eval="'leaves_allocation_cron_job'" name="function"/>
+                  <field name="args"> () </field>
+		</record>
+	</data>
+</openerp>

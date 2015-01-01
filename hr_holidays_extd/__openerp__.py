@@ -14,7 +14,7 @@ Allows for group allocation of leaves to employees with pre-defined leave types 
 	'data': [
 
 		'hr_holidays_extd_view.xml',
-		
+		'leaves_allocation_cron_job.xml',	
 		],
 	'installable': True,
 	'auto_install': False,
